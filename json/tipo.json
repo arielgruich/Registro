@@ -1,0 +1,6 @@
+{"ListaAtributos":
+[{"Tipo":"Long","Nombre":"IdTipo","NombreBd":"idtipo","EsVerificable":"true"},
+{"Tipo":"String","Nombre":"NombreTipo","NombreBd":"nombretipo","EsVerificable":"true"}],
+"EntidadBase":"BTipo",
+"DescEntidad":"Tipo",
+"EntidadBd":"tipo"}

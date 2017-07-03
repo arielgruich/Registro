@@ -1,0 +1,662 @@
+Gestores
+
+holaa
+
+package CapaDatos;
+import java.sql.SQLException;
+import java.util.Date;
+/**
+ * @author Christian Marbel Vega Mamani
+ *Entidad Peticion
+ */
+public class BPeticion implements java.io.Serializable {
+    
+// Declaración de los atributos de la entidad
+private Long IdPeticion;
+private String Usuario;
+private String Nombre;
+private String Telefono1;
+private String Telefono2;
+private Date Fecha;
+private String Canal;
+private String Tipo;
+  private String UsuarioBitacora; 
+ private Date FechaBitacora; 
+ private String RegistroBitacora;
+    
+      @Override
+     public int hashCode()
+    {
+        return Long.hashCode(IdPeticion);
+    }
+     
+// Se crea el constructor de la clase
+    public BPeticion() {
+    }
+    public BPeticion ( Long idPeticion, String usuario, String nombre, String telefono1, String telefono2, Date fecha, String canal, String tipo, String usuarioBitacora, Date fechaBitacora, String registroBitacora) {
+ this.IdPeticion = idPeticion;
+this.Usuario = usuario;
+this.Nombre = nombre;
+this.Telefono1 = telefono1;
+this.Telefono2 = telefono2;
+this.Fecha = fecha;
+this.Canal = canal;
+this.Tipo = tipo;
+ 
+ this.UsuarioBitacora = usuarioBitacora;
+this.FechaBitacora = fechaBitacora;
+this.RegistroBitacora = registroBitacora; 
+    }
+    
+// Se realizan los getters y setter de toda la entidad
+public Long getIdPeticion() { 
+ return this.IdPeticion; 
+ }
+ public void setIdPeticion(Long idPeticion) { 
+ this.IdPeticion = idPeticion; 
+ } 
+
+public String getUsuario() { 
+ return this.Usuario; 
+ }
+ public void setUsuario(String usuario) { 
+ this.Usuario = usuario; 
+ } 
+
+public String getNombre() { 
+ return this.Nombre; 
+ }
+ public void setNombre(String nombre) { 
+ this.Nombre = nombre; 
+ } 
+
+public String getTelefono1() { 
+ return this.Telefono1; 
+ }
+ public void setTelefono1(String telefono1) { 
+ this.Telefono1 = telefono1; 
+ } 
+
+public String getTelefono2() { 
+ return this.Telefono2; 
+ }
+ public void setTelefono2(String telefono2) { 
+ this.Telefono2 = telefono2; 
+ } 
+
+public Date getFecha() { 
+ return this.Fecha; 
+ }
+ public void setFecha(Date fecha) { 
+ this.Fecha = fecha; 
+ } 
+
+public String getCanal() { 
+ return this.Canal; 
+ }
+ public void setCanal(String canal) { 
+ this.Canal = canal; 
+ } 
+
+public String getTipo() { 
+ return this.Tipo; 
+ }
+ public void setTipo(String tipo) { 
+ this.Tipo = tipo; 
+ } 
+
+    
+    public String getUsuarioBitacora() {
+        return this.UsuarioBitacora;
+    }
+    
+    public void setUsuarioBitacora(String usuarioBitacora) {
+        this.UsuarioBitacora = usuarioBitacora;
+    }
+    public Date getFechaBitacora() {
+        return this.FechaBitacora;
+    }
+    
+    public void setFechaBitacora(Date fechaBitacora) {
+        this.FechaBitacora = fechaBitacora;
+    }
+    public String getRegistroBitacora() {
+        return this.RegistroBitacora;
+    }
+    
+    public void setRegistroBitacora(String registroBitacora) {
+        this.RegistroBitacora = registroBitacora;
+    }
+}
+-------------------------------Gestores base----------------------------------------
+package CapaNegocio;
+import CapaDatos.BPeticion;
+import CapaDatos.Resultado;
+import java.util.Date;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+/**
+ * @author Christian Marbel Vega Mamani
+ * @Gestor Peticion
+ */
+public class GestorPeticion {
+//Se define la variable conexión
+    private ConexionBD conexion;
+    
+    /**
+     *Método para obtener la lista de la entidad Peticion 
+     * @return 
+     */
+    public List<BPeticion> ObtenerListaCompletaPeticion() {
+//Se instancia la lista de la entidad
+        List<BPeticion> lista = new ArrayList();
+        try {
+//Se instancia la conexión a la Base de datos
+            conexion = new ConexionBD();
+//Se declara la sentencia sql
+            String sql = "SELECT * FROM public.peticion";
+//Se declara la variable de sentencia
+            Statement consulta;
+//Se obtiene la conexión y se crea la declaración
+            consulta = conexion.getConexion().createStatement();
+//Se ejecuta la sentencia
+            ResultSet registro = consulta.executeQuery(sql);
+//Se recorre los componentes del resultado obtenido
+            while (registro.next()) {
+                BPeticion e = new BPeticion ();
+   e.setIdPeticion(registro.getLong("idpeticion"));
+e.setUsuario(registro.getString("usuario"));
+e.setNombre(registro.getString("nombre"));
+e.setTelefono1(registro.getString("telefono1"));
+e.setTelefono2(registro.getString("telefono2"));
+Date vFecha=registro.getDate("fecha");
+if(vFecha!=null) 
+ {e.setFecha(registro.getDate("fecha"));}
+else 
+ {e.setFecha(null);} 
+e.setCanal(registro.getString("canal"));
+e.setTipo(registro.getString("tipo"));
+                e.setUsuarioBitacora(registro.getString("usuario_bitacora"));
+                e.setFechaBitacora(registro.getDate("fecha_bitacora"));
+                e.setRegistroBitacora(registro.getString("registro_bitacora"));
+                
+                lista.add(e);
+            }
+            // Se cierra la conexión a la base de datos
+            conexion.getConexion().close();
+        } catch (SQLException ex) {
+//Se despliega el error
+            System.out.println("Error al listar: " + ex);
+        }
+        return lista;
+    }
+        
+    /**
+     *Método para obtener la entidad Peticion a traves de su identificador único
+     * @param i
+     * @return 
+     */
+     public BPeticion ObtenerPeticionPorId(long i) {
+//Se inicializa la entidad
+         BPeticion  e = null;
+        try {
+//Se inicializa la entidad
+            conexion = new ConexionBD();
+//Se ingresa la sentencia sql
+            String sql = "SELECT * FROM public.peticion WHERE idpeticion=?";
+//Se obtiene la conexión y se prepara la sentencia
+            PreparedStatement consulta = conexion.getConexion().prepareStatement(sql);
+//Se asigna el valor a la consulta
+            consulta.setLong(1, i);
+//Se ejecuta la sentencia sql
+            ResultSet registro=consulta.executeQuery();
+//Se valida si existe un registro en el resultado
+            if(registro.next()){
+                e=new BPeticion();
+   e.setIdPeticion(registro.getLong("idpeticion"));
+e.setUsuario(registro.getString("usuario"));
+e.setNombre(registro.getString("nombre"));
+e.setTelefono1(registro.getString("telefono1"));
+e.setTelefono2(registro.getString("telefono2"));
+Date vFecha=registro.getDate("fecha");
+if(vFecha!=null) 
+ {e.setFecha(registro.getDate("fecha"));}
+else 
+ {e.setFecha(null);} 
+e.setCanal(registro.getString("canal"));
+e.setTipo(registro.getString("tipo"));
+                e.setUsuarioBitacora(registro.getString("usuario_bitacora"));
+                e.setFechaBitacora(registro.getDate("fecha_bitacora"));
+                e.setRegistroBitacora(registro.getString("registro_bitacora"));
+            }
+            // Se cierra la conexión a la base de datos
+            conexion.getConexion().close();
+        } catch (SQLException ex) {
+//Se despliega el error
+            System.out.println("Error al buscar: "+ex);
+        }
+        return e;
+         
+    }
+     
+    /**
+     *Método para insertar la entidad Peticion
+      *@param Usuario
+     *@param Nombre
+     *@param Telefono1
+     *@param Telefono2
+     *@param Fecha
+     *@param Canal
+     *@param Tipo
+     * @param UsuarioBitacora
+     * @param FechaBitacora
+     * @param RegistroBitacora
+     * @return 
+     */
+        public Resultado InsertarPeticion( String Usuario, String Nombre, String Telefono1, String Telefono2, Date Fecha, String Canal, String Tipo, String UsuarioBitacora, Date FechaBitacora,  String RegistroBitacora) 
+        {
+        
+        //Se instancia el objeto resultado
+        Resultado vObjResultado= new Resultado();
+                
+        //Se valida la entidad
+        vObjResultado = this.ValidarEntidad
+            (
+Long.parseLong("0"),
+ Usuario, 
+ Nombre, 
+ Telefono1, 
+ Telefono2, 
+ Fecha, 
+ Canal, 
+ Tipo, 
+                UsuarioBitacora, 
+                FechaBitacora, 
+                RegistroBitacora,
+                true
+            );
+            
+        //Se verifica que el resultado sea válido
+        if(vObjResultado.EsValido())
+        {
+             try{
+//Se instancia la conexión a la Base de datos
+                  conexion = new ConexionBD();
+//Se ingresa la sentencia sql
+            String sql = "INSERT INTO public.peticion "
+                    + "( usuario,  nombre,  telefono1,  telefono2,  fecha,  canal,  tipo, usuario_bitacora,fecha_bitacora,registro_bitacora) VALUES ( ?, ?, ?, ?, ?, ?, ?,?,?,?)";
+//Se obtiene la conexión y se prepara la sentencia
+            PreparedStatement consulta = conexion.getConexion().prepareStatement(sql);
+            
+            // Definiendo valores para ?
+            java.sql.Date fecha = new java.sql.Date(FechaBitacora.getTime());
+   consulta.setString(1,Usuario); 
+consulta.setString(2,Nombre); 
+consulta.setString(3,Telefono1); 
+consulta.setString(4,Telefono2); 
+if(Fecha!=null ) 
+ {java.sql.Date fecha=new java.sql.Date(Fecha.getTime());
+consulta.setDate(5,fecha); 
+}
+else 
+ {consulta.setDate(5,null);} 
+consulta.setString(6,Canal); 
+consulta.setString(7,Tipo); 
+consulta.setString(8,UsuarioBitacora);
+consulta.setDate(9,fecha);
+consulta.setString(10,RegistroBitacora);
+            
+            // Ejecutando consulta
+            consulta.executeUpdate();
+            
+            // Se cierra la conexión a la base de datos
+            conexion.getConexion().close();   
+                 
+            // Se asigna al objeto el resultado obtenido
+            vObjResultado.setEsValido(true);
+            vObjResultado.setValido("true");
+            vObjResultado.setMensaje("La inserción se realizó correctamente");
+        } catch (Exception e){
+            
+            // Se asigna al objeto el resultado obtenido
+            vObjResultado.setMensaje("-"+e);
+            vObjResultado.setEsValido(false);
+            vObjResultado.setValido("false");
+        }
+             
+        }
+        //Se retorna el resultado
+        return vObjResultado;
+         
+        }
+        
+    /**
+     *Método para modificar la entidad Peticion
+      *@param IdPeticion
+     *@param Usuario
+     *@param Nombre
+     *@param Telefono1
+     *@param Telefono2
+     *@param Fecha
+     *@param Canal
+     *@param Tipo
+     * @param UsuarioBitacora
+     * @param FechaBitacora
+     * @param RegistroBitacora
+     * @return 
+     */
+    public Resultado ModificarPeticion( Long IdPeticion, String Usuario, String Nombre, String Telefono1, String Telefono2, Date Fecha, String Canal, String Tipo, String UsuarioBitacora, Date FechaBitacora,  String RegistroBitacora) 
+    {
+        
+        //Se instancia el objeto resultado
+        Resultado vObjResultado= new Resultado();
+                
+        //Se valida la entidad
+        vObjResultado = this.ValidarEntidad
+            (
+ IdPeticion, 
+ Usuario, 
+ Nombre, 
+ Telefono1, 
+ Telefono2, 
+ Fecha, 
+ Canal, 
+ Tipo, 
+ 
+                UsuarioBitacora, 
+                FechaBitacora, 
+                RegistroBitacora,
+                false
+            );
+            
+        //Se verifica que el resultado sea válido
+        if(vObjResultado.EsValido())
+        {
+             try{
+//Se instancia la conexión a la Base de datos
+                  conexion = new ConexionBD();
+//Se ingresa la sentencia sql
+           String sql = "UPDATE public.peticion SET "
+                    + "usuario=?,nombre=?,telefono1=?,telefono2=?,fecha=?,canal=?,tipo=?,usuario_bitacora=?,fecha_bitacora=?,registro_bitacora=? WHERE idpeticion=?";
+                  
+//Se obtiene la conexión y se prepara la sentencia
+            PreparedStatement consulta = conexion.getConexion().prepareStatement(sql);
+            
+            // Definiendo valores para ?
+            java.sql.Date fecha = new java.sql.Date(FechaBitacora.getTime());
+   consulta.setString(1,Usuario); 
+consulta.setString(2,Nombre); 
+consulta.setString(3,Telefono1); 
+consulta.setString(4,Telefono2); 
+if(Fecha!=null ) 
+ {java.sql.Date fecha=new java.sql.Date(Fecha.getTime());
+consulta.setDate(5,fecha); 
+}
+else 
+ {consulta.setDate(5,null);} 
+consulta.setString(6,Canal); 
+consulta.setString(7,Tipo); 
+consulta.setString(8,UsuarioBitacora);
+consulta.setDate(9,fecha);
+consulta.setString(10,RegistroBitacora);
+            consulta.setLong(11, IdPeticion);
+            
+            // Ejecutando consulta
+            consulta.executeUpdate();
+            
+            // Se cierra la conexión a la base de datos
+            conexion.getConexion().close();   
+                 
+            // Se asigna al objeto el resultado obtenido
+            vObjResultado.setEsValido(true);
+            vObjResultado.setValido("true");
+            vObjResultado.setMensaje("La modificación se realizó correctamente");
+        } catch (Exception e){
+            
+            // Se asigna al objeto el resultado obtenido
+            vObjResultado.setMensaje("-"+e);
+            vObjResultado.setEsValido(false);
+            vObjResultado.setValido("false");
+        }
+             
+        }
+        //Se retorna el resultado
+        return vObjResultado;
+         
+    }
+    
+    /**
+     *Método para eliminar la entidad Peticion
+     * @param IdPeticion
+     * @return 
+     */
+    public Resultado EliminarPeticion(Long IdPeticion) 
+    {
+         //Se instancia el objeto resultado
+        Resultado vObjResultado= new Resultado();
+        
+        //Se verifica que el identificador sea válido
+        if(IdPeticion>0)
+        {
+            //Se inicializa el objeto transacción
+            try{
+//Se instancia la conexión a la Base de datos
+                conexion = new ConexionBD();
+//Se ingresa la sentencia sql
+                String sql = "DELETE FROM public.peticion WHERE idpeticion=?";
+//Se obtiene la conexion y se prepara la sentencia
+                PreparedStatement consulta = conexion.getConexion().prepareStatement(sql);
+//Asignación de valores a la consulta
+                consulta.setLong(1, IdPeticion);
+//Se ejecuta la consulta y se asigna el resultado
+                int nroEliminados = consulta.executeUpdate();
+            // Se cierra la conexión a la base de datos
+                conexion.getConexion().close();
+            // Se verifica si se realizó la eliminación
+                if (nroEliminados > 0) {
+                    System.out.println("Registro Eliminado :" + IdPeticion);
+                    
+            // Se asigna al objeto el resultado obtenido
+                    vObjResultado.setEsValido(true);
+                    vObjResultado.setValido("true");
+                    vObjResultado.setMensaje("La eliminación se realizó correctamente");
+                    return vObjResultado;
+                }else{
+            // Se asigna al objeto el resultado obtenido
+                vObjResultado.setMensaje("No existe Registro Nro. : "+IdPeticion);
+                vObjResultado.setEsValido(false);
+                vObjResultado.setValido("false");
+                }
+            } 
+            catch (Exception e)
+            {
+            // Se asigna al objeto el resultado obtenido
+                vObjResultado.setMensaje("-"+e);
+                vObjResultado.setEsValido(false);
+                vObjResultado.setValido("false");
+                
+            }
+        }
+        else
+        {
+            // Se asigna al objeto el resultado obtenido
+            vObjResultado.setEsValido(false);
+            vObjResultado.setMensaje("Identificador de entidad no valido");
+            vObjResultado.setValido("false");
+        }
+        
+        //Se retorna la entidad
+        return vObjResultado;
+    }
+     private Resultado ValidarEntidad( Long IdPeticion, String Usuario, String Nombre, String Telefono1, String Telefono2, Date Fecha, String Canal, String Tipo, String UsuarioBitacora, Date FechaBitacora,  String RegistroBitacora, boolean esInsertar) {
+          
+            // Predetermina valor de validación.
+            Resultado pObjResultado = new Resultado();
+            // Se inicializa el estado
+            pObjResultado.setEsValido(true);
+            //Se verifica que es un método insertar
+            if(!esInsertar)
+            {
+                //Se valida el identificador de la entidad Fuente
+                if(IdPeticion<=0)
+                {
+                    pObjResultado.setEsValido(false);
+                    pObjResultado.setMensaje("Se requiere el identificador de la entidad Peticion");
+                }
+            }
+            
+            //Se validan los parámetros de entrada obligatorios
+if(pObjResultado.EsValido()&&GeneralUtil.isNullOrEmpty(Usuario)){ 
+ pObjResultado.setEsValido(false); 
+ pObjResultado.setMensaje("Ingrese porfavor el campo Usuario"); 
+ } 
+if(pObjResultado.EsValido()&&GeneralUtil.isNullOrEmpty(Canal)){ 
+ pObjResultado.setEsValido(false); 
+ pObjResultado.setMensaje("Ingrese porfavor el campo Canal"); 
+ } 
+if(pObjResultado.EsValido()&&GeneralUtil.isNullOrEmpty(Tipo)){ 
+ pObjResultado.setEsValido(false); 
+ pObjResultado.setMensaje("Ingrese porfavor el campo Tipo"); 
+ } 
+    
+             else if(pObjResultado.EsValido()&& GeneralUtil.isNullOrEmpty(UsuarioBitacora))
+             {
+            // Se asigna al objeto el resultado obtenido
+                 pObjResultado.setEsValido(false);
+                 pObjResultado.setMensaje("Se requiere usuario bitacora");
+             }
+             else if(pObjResultado.EsValido()&& GeneralUtil.isNullOrEmpty(RegistroBitacora))
+             {
+            // Se asigna al objeto el resultado obtenido
+                pObjResultado.setEsValido(false);
+                pObjResultado.setMensaje("Se requiere registro bitacora");
+             }
+             
+             //Se retorna el resultado
+             return pObjResultado;
+     }
+}
+-------------------------------Exposición a servicio Web----------------------------------------
+// 
+     
+    
+    /**
+     *Método para obtener la lista de la entidad Peticion
+     * @return 
+     */
+    @WebMethod(operationName = "ObtenerListaCompletaPeticion")
+    public List<BPeticion> ObtenerListaCompletaPeticion() {
+    
+       GestorPeticion gf= new GestorPeticion();
+        return gf.ObtenerListaCompletaPeticion();
+    }
+    
+    /**
+     *Método para obtener la entidad Peticion a traves de su identificador único
+     * @param i
+     * @return 
+     */
+     @WebMethod(operationName = "ObtenerPeticionPorId")
+     public BPeticion ObtenerPeticionPorId(@WebParam(name = "IdPeticion")long i) {
+        GestorPeticion gf= new GestorPeticion();
+        return gf.ObtenerPeticionPorId(i);
+    }
+    
+    /**
+     *Método para insertar la entidad Peticion
+      *@param Usuario
+     *@param Nombre
+     *@param Telefono1
+     *@param Telefono2
+     *@param Fecha
+     *@param Canal
+     *@param Tipo
+     * @param UsuarioBitacora
+     * @param FechaBitacora
+     * @param RegistroBitacora
+     * @return 
+     */
+    @WebMethod(operationName = "InsertarPeticion")    
+    public Resultado InsertarPeticion( @WebParam(name = "Usuario") String Usuario,
+ @WebParam(name = "Nombre") String Nombre,
+ @WebParam(name = "Telefono1") String Telefono1,
+ @WebParam(name = "Telefono2") String Telefono2,
+ @WebParam(name = "Fecha") Date Fecha,
+ @WebParam(name = "Canal") String Canal,
+ @WebParam(name = "Tipo") String Tipo,
+ 
+                                    @WebParam(name = "UsuarioBitacora") String UsuarioBitacora, 
+                                    @WebParam(name = "FechaBitacora") Date FechaBitacora,  
+                                    @WebParam(name = "RegistroBitacora") String RegistroBitacora
+                                    ) 
+    {
+        
+        GestorPeticion gf= new GestorPeticion();
+        return gf.InsertarPeticion( Usuario, 
+ Nombre, 
+ Telefono1, 
+ Telefono2, 
+ Fecha, 
+ Canal, 
+ Tipo, 
+UsuarioBitacora, FechaBitacora, RegistroBitacora);
+    }
+    
+     /**
+     *Método para modificar la entidad Peticion
+      *@param IdPeticion
+     *@param Usuario
+     *@param Nombre
+     *@param Telefono1
+     *@param Telefono2
+     *@param Fecha
+     *@param Canal
+     *@param Tipo
+     * @param UsuarioBitacora
+     * @param FechaBitacora
+     * @param RegistroBitacora
+     * @return 
+     */
+    @WebMethod(operationName = "ModificarPeticion")
+    public Resultado ModificarPeticion( @WebParam(name = "IdPeticion") Long IdPeticion,
+ @WebParam(name = "Usuario") String Usuario,
+ @WebParam(name = "Nombre") String Nombre,
+ @WebParam(name = "Telefono1") String Telefono1,
+ @WebParam(name = "Telefono2") String Telefono2,
+ @WebParam(name = "Fecha") Date Fecha,
+ @WebParam(name = "Canal") String Canal,
+ @WebParam(name = "Tipo") String Tipo,
+                                    @WebParam(name = "UsuarioBitacora") String UsuarioBitacora, 
+                                    @WebParam(name = "FechaBitacora") Date FechaBitacora,  
+                                    @WebParam(name = "RegistroBitacora") String RegistroBitacora
+                                      ) 
+    {
+        GestorPeticion gf= new GestorPeticion();
+        return gf.ModificarPeticion( IdPeticion, 
+ Usuario, 
+ Nombre, 
+ Telefono1, 
+ Telefono2, 
+ Fecha, 
+ Canal, 
+ Tipo, 
+UsuarioBitacora, FechaBitacora, RegistroBitacora);
+    }
+    
+      /**
+      *Método para eliminar la entidad Peticion
+      * @param IdPeticion
+      * @return 
+      */
+     @WebMethod(operationName = "EliminarPeticion")
+     public Resultado EliminarPeticion(@WebParam(name = "IdPeticion")Long IdPeticion) 
+     {
+         GestorPeticion gf= new GestorPeticion();
+         return gf.EliminarPeticion(IdPeticion);
+     }
+     
+     // 

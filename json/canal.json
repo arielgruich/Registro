@@ -1,0 +1,6 @@
+{"ListaAtributos":
+[{"Tipo":"Long","Nombre":"IdCanal","NombreBd":"idcanal","EsVerificable":"true"},
+{"Tipo":"String","Nombre":"NombreCanal","NombreBd":"nombrecanal","EsVerificable":"true"}],
+"EntidadBase":"BCanal",
+"DescEntidad":"Canal",
+"EntidadBd":"canal"}

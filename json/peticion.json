@@ -1,0 +1,12 @@
+{"ListaAtributos":
+[{"Tipo":"Long","Nombre":"IdPeticion","NombreBd":"idpeticion","EsVerificable":"true"},
+{"Tipo":"String","Nombre":"Usuario","NombreBd":"usuario","EsVerificable":"true"},
+{"Tipo":"String","Nombre":"Nombre","NombreBd":"nombre","EsVerificable":"false"},
+{"Tipo":"String","Nombre":"Telefono1","NombreBd":"telefono1","EsVerificable":"false"},
+{"Tipo":"String","Nombre":"Telefono2","NombreBd":"telefono2","EsVerificable":"false"},
+{"Tipo":"Date","Nombre":"Fecha","NombreBd":"fecha","EsVerificable":"false"},
+{"Tipo":"String","Nombre":"Canal","NombreBd":"canal","EsVerificable":"true"},
+{"Tipo":"String","Nombre":"Tipo","NombreBd":"tipo","EsVerificable":"true"}],
+"EntidadBase":"BPeticion",
+"DescEntidad":"Peticion",
+"EntidadBd":"peticion"}
