@@ -51,44 +51,40 @@ public class RegistroWS {
     /**
      *Método para insertar la entidad Canal
      *@param NombreCanal
-     *@param UsuarioBitacora
-     *@param FechaBitacora
+     *@param UsuarioBitacora     
      *@param RegistroBitacora
      *@return 
      */
     @WebMethod(operationName = "InsertarCanal")    
     public Resultado InsertarCanal( @WebParam(name = "NombreCanal") String NombreCanal, 
                                     @WebParam(name = "UsuarioBitacora") String UsuarioBitacora, 
-                                    @WebParam(name = "FechaBitacora") Date FechaBitacora,  
                                     @WebParam(name = "RegistroBitacora") String RegistroBitacora
                                     ) 
     {        
         GestorCanal gf= new GestorCanal();
         return gf.InsertarCanal( NombreCanal, 
-        UsuarioBitacora, FechaBitacora, RegistroBitacora);
+        UsuarioBitacora, RegistroBitacora);
     }
     
      /**
      *Método para modificar la entidad Canal
      *@param IdCanal
      *@param NombreCanal
-     * @param UsuarioBitacora
-     * @param FechaBitacora
+     * @param UsuarioBitacora     
      * @param RegistroBitacora
      * @return 
      */
     @WebMethod(operationName = "ModificarCanal")
     public Resultado ModificarCanal( @WebParam(name = "IdCanal") Long IdCanal,
     @WebParam(name = "NombreCanal") String NombreCanal,
-                                    @WebParam(name = "UsuarioBitacora") String UsuarioBitacora, 
-                                    @WebParam(name = "FechaBitacora") Date FechaBitacora,  
+                                    @WebParam(name = "UsuarioBitacora") String UsuarioBitacora,                                       
                                     @WebParam(name = "RegistroBitacora") String RegistroBitacora
                                    ) 
     {
         GestorCanal gf= new GestorCanal();
         return gf.ModificarCanal( IdCanal, 
         NombreCanal, 
-        UsuarioBitacora, FechaBitacora, RegistroBitacora);
+        UsuarioBitacora, RegistroBitacora);
     }
     
     /**
@@ -128,14 +124,14 @@ public class RegistroWS {
     /**
      *Método para insertar la entidad Tipo
      *@param NombreTipo
-     *@param UsuarioBitacora
+     *@param UsuarioBitacora     
      *@param FechaBitacora
      *@param RegistroBitacora
      *@return 
      */
     @WebMethod(operationName = "InsertarTipo")    
     public Resultado InsertarTipo( @WebParam(name = "NombreTipo") String NombreTipo,
-                                   @WebParam(name = "UsuarioBitacora") String UsuarioBitacora, 
+                                   @WebParam(name = "UsuarioBitacora") String UsuarioBitacora,                                    
                                    @WebParam(name = "FechaBitacora") Date FechaBitacora,  
                                    @WebParam(name = "RegistroBitacora") String RegistroBitacora
                                   ) 
@@ -149,7 +145,7 @@ public class RegistroWS {
     *Método para modificar la entidad Tipo
     *@param IdTipo
     *@param NombreTipo
-    *@param UsuarioBitacora
+    *@param UsuarioBitacora    
     *@param FechaBitacora
     *@param RegistroBitacora
     *@return 
@@ -157,14 +153,14 @@ public class RegistroWS {
     @WebMethod(operationName = "ModificarTipo")
     public Resultado ModificarTipo( @WebParam(name = "IdTipo") Long IdTipo,
                                     @WebParam(name = "NombreTipo") String NombreTipo,
-                                    @WebParam(name = "UsuarioBitacora") String UsuarioBitacora, 
+                                    @WebParam(name = "UsuarioBitacora") String UsuarioBitacora,                                     
                                     @WebParam(name = "FechaBitacora") Date FechaBitacora,  
                                     @WebParam(name = "RegistroBitacora") String RegistroBitacora
                                   ) 
     {
         GestorTipo gf= new GestorTipo();
         return gf.ModificarTipo( IdTipo, 
-        NombreTipo, 
+        NombreTipo,  
         UsuarioBitacora, FechaBitacora, RegistroBitacora);
     }
     
@@ -209,13 +205,10 @@ public class RegistroWS {
      *Método para insertar la entidad Peticion
      *@param Usuario
      *@param Nombre
-     *@param Telefono1
-     *@param Telefono2
-     *@param Fecha
+     *@param Telefono1       
      *@param Canal
      *@param Tipo
-     *@param UsuarioBitacora
-     *@param FechaBitacora
+     *@param UsuarioBitacora     
      *@param RegistroBitacora
      *@return 
      */
@@ -223,12 +216,10 @@ public class RegistroWS {
     public Resultado InsertarPeticion(
             @WebParam(name = "Usuario") String Usuario,
             @WebParam(name = "Nombre") String Nombre,
-            @WebParam(name = "Telefono1") String Telefono1,
-            @WebParam(name = "Telefono2") String Telefono2,
-            @WebParam(name = "Fecha") Date Fecha,
+            @WebParam(name = "Telefono1") String Telefono1, 
             @WebParam(name = "Canal") String Canal,
             @WebParam(name = "Tipo") String Tipo,
-            @WebParam(name = "UsuarioBitacora") String UsuarioBitacora, 
+            @WebParam(name = "UsuarioBitacora") String UsuarioBitacora,             
             @WebParam(name = "FechaBitacora") Date FechaBitacora,  
             @WebParam(name = "RegistroBitacora") String RegistroBitacora
         ) 
@@ -237,8 +228,6 @@ public class RegistroWS {
         return gf.InsertarPeticion( Usuario, 
         Nombre, 
         Telefono1, 
-        Telefono2, 
-        Fecha, 
         Canal, 
         Tipo, 
         UsuarioBitacora, FechaBitacora, RegistroBitacora);
@@ -249,13 +238,10 @@ public class RegistroWS {
      *@param IdPeticion
      *@param Usuario
      *@param Nombre
-     *@param Telefono1
-     *@param Telefono2
-     *@param Fecha
+     *@param Telefono1  
      *@param Canal
      *@param Tipo
-     *@param UsuarioBitacora
-     *@param FechaBitacora
+     *@param UsuarioBitacora     
      *@param RegistroBitacora
      *@return 
      */
@@ -264,9 +250,7 @@ public class RegistroWS {
             @WebParam(name = "IdPeticion") Long IdPeticion,
             @WebParam(name = "Usuario") String Usuario,
             @WebParam(name = "Nombre") String Nombre,
-            @WebParam(name = "Telefono1") String Telefono1,
-            @WebParam(name = "Telefono2") String Telefono2,
-            @WebParam(name = "Fecha") Date Fecha,
+            @WebParam(name = "Telefono1") String Telefono1,            
             @WebParam(name = "Canal") String Canal,
             @WebParam(name = "Tipo") String Tipo,
             @WebParam(name = "UsuarioBitacora") String UsuarioBitacora, 
@@ -278,9 +262,7 @@ public class RegistroWS {
         return gf.ModificarPeticion( IdPeticion, 
         Usuario, 
         Nombre, 
-        Telefono1, 
-        Telefono2, 
-        Fecha, 
+        Telefono1,         
         Canal, 
         Tipo, 
         UsuarioBitacora, FechaBitacora, RegistroBitacora);

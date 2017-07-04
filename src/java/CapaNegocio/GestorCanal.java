@@ -43,7 +43,7 @@ public class GestorCanal {
                 BCanal e = new BCanal ();
                 e.setIdCanal(registro.getLong("idcanal"));
                 e.setNombreCanal(registro.getString("nombrecanal"));
-                e.setUsuarioBitacora(registro.getString("usuario_bitacora"));
+                e.setUsuarioBitacora(registro.getString("usuario_bitacora"));                
                 e.setFechaBitacora(registro.getDate("fecha_bitacora"));
                 e.setRegistroBitacora(registro.getString("registro_bitacora"));                
                 lista.add(e);
@@ -81,7 +81,7 @@ public class GestorCanal {
                 e=new BCanal();
                 e.setIdCanal(registro.getLong("idcanal"));
                 e.setNombreCanal(registro.getString("nombrecanal"));
-                e.setUsuarioBitacora(registro.getString("usuario_bitacora"));
+                e.setUsuarioBitacora(registro.getString("usuario_bitacora"));                
                 e.setFechaBitacora(registro.getDate("fecha_bitacora"));
                 e.setRegistroBitacora(registro.getString("registro_bitacora"));
             }
@@ -102,17 +102,18 @@ public class GestorCanal {
      * @param RegistroBitacora
      * @return 
      */
-    public Resultado InsertarCanal( String NombreCanal, String UsuarioBitacora, Date FechaBitacora,  String RegistroBitacora) 
+    public Resultado InsertarCanal( String NombreCanal, String UsuarioBitacora, String RegistroBitacora) 
     {
         
         //Se instancia el objeto resultado
         Resultado vObjResultado= new Resultado();                
+        Date FechaBitacora = null;
         //Se valida la entidad
         vObjResultado = this.ValidarEntidad
         (
             Long.parseLong("0"),
             NombreCanal, 
-            UsuarioBitacora, 
+            UsuarioBitacora,             
             FechaBitacora, 
             RegistroBitacora,
             true
@@ -126,12 +127,13 @@ public class GestorCanal {
                 conexion = new ConexionBD();
                 //Se ingresa la sentencia sql
                 String sql = "INSERT INTO public.canal "
-                    + "( nombrecanal, usuario_bitacora,fecha_bitacora,registro_bitacora) VALUES ( ?,?,?,?)";
+                    + "( nombrecanal, usuario_bitacora, fecha_bitacora, registro_bitacora) VALUES ( ?,?,?,?)";
                 //Se obtiene la conexión y se prepara la sentencia
                 PreparedStatement consulta = conexion.getConexion().prepareStatement(sql);
             
                 // Definiendo valores para ?
-                java.sql.Date fecha = new java.sql.Date(FechaBitacora.getTime());
+                Date dat = new Date();  
+                java.sql.Date fecha = new java.sql.Date(dat.getTime()); 
                 consulta.setString(1,NombreCanal); 
                 consulta.setString(2,UsuarioBitacora);
                 consulta.setDate(3,fecha);
@@ -164,23 +166,24 @@ public class GestorCanal {
      *Método para modificar la entidad Canal
      *@param IdCanal
      *@param NombreCanal
-     *@param UsuarioBitacora
+     *@param UsuarioBitacora     
      *@param FechaBitacora
      *@param RegistroBitacora
      *@return 
      */
-    public Resultado ModificarCanal( Long IdCanal, String NombreCanal, String UsuarioBitacora, Date FechaBitacora,  String RegistroBitacora) 
+    public Resultado ModificarCanal( Long IdCanal, String NombreCanal, String UsuarioBitacora, String RegistroBitacora) 
     {
         
         //Se instancia el objeto resultado
         Resultado vObjResultado= new Resultado();
+        Date FechaBitacora = null;
                 
         //Se valida la entidad
         vObjResultado = this.ValidarEntidad
         (
             IdCanal, 
             NombreCanal, 
-            UsuarioBitacora, 
+            UsuarioBitacora,             
             FechaBitacora, 
             RegistroBitacora,
             false
@@ -200,7 +203,8 @@ public class GestorCanal {
                 PreparedStatement consulta = conexion.getConexion().prepareStatement(sql);
             
                 // Definiendo valores para ?
-                java.sql.Date fecha = new java.sql.Date(FechaBitacora.getTime());
+                Date dat = new Date();  
+                java.sql.Date fecha = new java.sql.Date(dat.getTime());
                 consulta.setString(1,NombreCanal); 
                 consulta.setString(2,UsuarioBitacora);
                 consulta.setDate(3,fecha);

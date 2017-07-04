@@ -10,9 +10,7 @@ public class BPeticion implements java.io.Serializable {
     private Long IdPeticion;
     private String Usuario;
     private String Nombre;
-    private String Telefono1;
-    private String Telefono2;
-    private Date Fecha;
+    private String Telefono1;    
     private String Canal;
     private String Tipo;
     private String UsuarioBitacora; 
@@ -28,14 +26,12 @@ public class BPeticion implements java.io.Serializable {
     // Se crea el constructor de la clase
     public BPeticion() {
     }
-    public BPeticion ( Long idPeticion, String usuario, String nombre, String telefono1, String telefono2, Date fecha, String canal, String tipo, String usuarioBitacora, Date fechaBitacora, String registroBitacora) 
+    public BPeticion ( Long idPeticion, String usuario, String nombre, String telefono1, String canal, String tipo, String usuarioBitacora, Date fechaBitacora, String registroBitacora) 
     {
         this.IdPeticion = idPeticion;
         this.Usuario = usuario;
         this.Nombre = nombre;
-        this.Telefono1 = telefono1;
-        this.Telefono2 = telefono2;
-        this.Fecha = fecha;
+        this.Telefono1 = telefono1;        
         this.Canal = canal;
         this.Tipo = tipo; 
         this.UsuarioBitacora = usuarioBitacora;
@@ -70,18 +66,7 @@ public class BPeticion implements java.io.Serializable {
     public void setTelefono1(String telefono1) { 
         this.Telefono1 = telefono1; 
     } 
-    public String getTelefono2() { 
-        return this.Telefono2; 
-    }
-    public void setTelefono2(String telefono2) { 
-        this.Telefono2 = telefono2; 
-    } 
-    public Date getFecha() { 
-        return this.Fecha; 
-    }
-    public void setFecha(Date fecha) { 
-        this.Fecha = fecha; 
-    } 
+    
     public String getCanal() { 
         return this.Canal; 
     }

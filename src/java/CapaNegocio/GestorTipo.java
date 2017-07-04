@@ -130,7 +130,8 @@ public class GestorTipo {
                 PreparedStatement consulta = conexion.getConexion().prepareStatement(sql);
             
                 // Definiendo valores para ?
-                java.sql.Date fecha = new java.sql.Date(FechaBitacora.getTime());
+                Date dat = new Date();  
+                java.sql.Date fecha = new java.sql.Date(dat.getTime());
                 consulta.setString(1,NombreTipo); 
                 consulta.setString(2,UsuarioBitacora);
                 consulta.setDate(3,fecha);
@@ -192,7 +193,8 @@ public class GestorTipo {
                 PreparedStatement consulta = conexion.getConexion().prepareStatement(sql);
             
                 // Definiendo valores para ?
-                java.sql.Date fecha = new java.sql.Date(FechaBitacora.getTime());
+                Date dat = new Date();  
+                java.sql.Date fecha = new java.sql.Date(dat.getTime());
                 consulta.setString(1,NombreTipo); 
                 consulta.setString(2,UsuarioBitacora);
                 consulta.setDate(3,fecha);
