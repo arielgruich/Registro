@@ -8,7 +8,6 @@ import java.util.Date;
 public class BPeticion implements java.io.Serializable {    
     // Declaración de los atributos de la entidad
     private Long IdPeticion;
-    private String Usuario;
     private String Nombre;
     private String Telefono1;    
     private String Canal;
@@ -26,10 +25,9 @@ public class BPeticion implements java.io.Serializable {
     // Se crea el constructor de la clase
     public BPeticion() {
     }
-    public BPeticion ( Long idPeticion, String usuario, String nombre, String telefono1, String canal, String tipo, String usuarioBitacora, Date fechaBitacora, String registroBitacora) 
+    public BPeticion ( Long idPeticion, String nombre, String telefono1, String canal, String tipo, String usuarioBitacora, Date fechaBitacora, String registroBitacora) 
     {
         this.IdPeticion = idPeticion;
-        this.Usuario = usuario;
         this.Nombre = nombre;
         this.Telefono1 = telefono1;        
         this.Canal = canal;
@@ -45,13 +43,6 @@ public class BPeticion implements java.io.Serializable {
     }
     public void setIdPeticion(Long idPeticion) { 
         this.IdPeticion = idPeticion; 
-    } 
-
-    public String getUsuario() { 
-        return this.Usuario; 
-    }
-    public void setUsuario(String usuario) { 
-        this.Usuario = usuario; 
     } 
 
     public String getNombre() { 

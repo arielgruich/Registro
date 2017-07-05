@@ -202,8 +202,7 @@ public class RegistroWS {
     }
     
     /**
-     *Método para insertar la entidad Peticion
-     *@param Usuario
+     *Método para insertar la entidad Peticion     
      *@param Nombre
      *@param Telefono1       
      *@param Canal
@@ -213,8 +212,7 @@ public class RegistroWS {
      *@return 
      */
     @WebMethod(operationName = "InsertarPeticion")    
-    public Resultado InsertarPeticion(
-            @WebParam(name = "Usuario") String Usuario,
+    public Resultado InsertarPeticion(            
             @WebParam(name = "Nombre") String Nombre,
             @WebParam(name = "Telefono1") String Telefono1, 
             @WebParam(name = "Canal") String Canal,
@@ -225,7 +223,7 @@ public class RegistroWS {
         ) 
     {        
         GestorPeticion gf= new GestorPeticion();
-        return gf.InsertarPeticion( Usuario, 
+        return gf.InsertarPeticion( 
         Nombre, 
         Telefono1, 
         Canal, 
@@ -235,8 +233,7 @@ public class RegistroWS {
     
      /**
      *Método para modificar la entidad Peticion
-     *@param IdPeticion
-     *@param Usuario
+     *@param IdPeticion     
      *@param Nombre
      *@param Telefono1  
      *@param Canal
@@ -247,8 +244,7 @@ public class RegistroWS {
      */
     @WebMethod(operationName = "ModificarPeticion")
     public Resultado ModificarPeticion(
-            @WebParam(name = "IdPeticion") Long IdPeticion,
-            @WebParam(name = "Usuario") String Usuario,
+            @WebParam(name = "IdPeticion") Long IdPeticion,            
             @WebParam(name = "Nombre") String Nombre,
             @WebParam(name = "Telefono1") String Telefono1,            
             @WebParam(name = "Canal") String Canal,
@@ -259,8 +255,7 @@ public class RegistroWS {
         ) 
     {
         GestorPeticion gf= new GestorPeticion();
-        return gf.ModificarPeticion( IdPeticion, 
-        Usuario, 
+        return gf.ModificarPeticion( IdPeticion,         
         Nombre, 
         Telefono1,         
         Canal, 

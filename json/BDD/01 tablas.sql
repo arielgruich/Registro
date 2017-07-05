@@ -24,8 +24,7 @@ create table Tipo(
 
 
 create table Peticion(
-  IdPeticion serial,
-  Usuario varchar(50) not null,
+  IdPeticion serial,  
   Nombre varchar(50) null,
   Telefono1 varchar(50) null,    
   Canal varchar(50) references Canal(NombreCanal),

@@ -37,8 +37,7 @@ public class GestorPeticion {
             //Se recorre los componentes del resultado obtenido
             while (registro.next()) {
                 BPeticion e = new BPeticion ();
-                e.setIdPeticion(registro.getLong("idpeticion"));
-                e.setUsuario(registro.getString("usuario"));
+                e.setIdPeticion(registro.getLong("idpeticion"));                
                 e.setNombre(registro.getString("nombre"));
                 e.setTelefono1(registro.getString("telefono1"));                
                 e.setCanal(registro.getString("canal"));
@@ -79,8 +78,7 @@ public class GestorPeticion {
             //Se valida si existe un registro en el resultado
             if(registro.next()){
                 e=new BPeticion();
-                e.setIdPeticion(registro.getLong("idpeticion"));
-                e.setUsuario(registro.getString("usuario"));
+                e.setIdPeticion(registro.getLong("idpeticion"));                
                 e.setNombre(registro.getString("nombre"));
                 e.setTelefono1(registro.getString("telefono1"));                
                 e.setCanal(registro.getString("canal"));
@@ -99,8 +97,7 @@ public class GestorPeticion {
     }
      
     /**
-     *Método para insertar la entidad Peticion
-     *@param Usuario
+     *Método para insertar la entidad Peticion     
      *@param Nombre
      *@param Telefono1     
      *@param Canal
@@ -110,7 +107,7 @@ public class GestorPeticion {
      *@param RegistroBitacora
      *@return 
      */
-    public Resultado InsertarPeticion( String Usuario, String Nombre, String Telefono1, String Canal, String Tipo, String UsuarioBitacora, Date FechaBitacora,  String RegistroBitacora) 
+    public Resultado InsertarPeticion( String Nombre, String Telefono1, String Canal, String Tipo, String UsuarioBitacora, Date FechaBitacora,  String RegistroBitacora) 
     {       
         //Se instancia el objeto resultado
         Resultado vObjResultado= new Resultado();                
@@ -118,7 +115,6 @@ public class GestorPeticion {
         vObjResultado = this.ValidarEntidad
         (
             Long.parseLong("0"),
-            Usuario, 
             Nombre, 
             Telefono1,             
             Canal, 
@@ -137,21 +133,20 @@ public class GestorPeticion {
                 conexion = new ConexionBD();
                 //Se ingresa la sentencia sql
                 String sql = "INSERT INTO public.peticion "
-                    + "( usuario,  nombre,  telefono1,  canal,  tipo, usuario_bitacora,fecha_bitacora,registro_bitacora) VALUES ( ?, ?, ?, ?, ?,?,?,?)";
+                    + "( nombre,  telefono1,  canal,  tipo, usuario_bitacora,fecha_bitacora,registro_bitacora) VALUES ( ?, ?, ?, ?, ?, ?,?)";
                 //Se obtiene la conexión y se prepara la sentencia
                 PreparedStatement consulta = conexion.getConexion().prepareStatement(sql);
                 // Definiendo valores para ?                
                 Date dat = new Date();  
                 java.sql.Date fecha = new java.sql.Date(dat.getTime());
                 
-                consulta.setString(1,Usuario); 
-                consulta.setString(2,Nombre); 
-                consulta.setString(3,Telefono1);                 
-                consulta.setString(4,Canal); 
-                consulta.setString(5,Tipo); 
-                consulta.setString(6,UsuarioBitacora);
-                consulta.setDate(7,fecha);
-                consulta.setString(8,RegistroBitacora);            
+                consulta.setString(1,Nombre); 
+                consulta.setString(2,Telefono1);                 
+                consulta.setString(3,Canal); 
+                consulta.setString(4,Tipo); 
+                consulta.setString(5,UsuarioBitacora);
+                consulta.setDate(6,fecha);
+                consulta.setString(7,RegistroBitacora);            
                 // Ejecutando consulta
                 consulta.executeUpdate();            
                 // Se cierra la conexión a la base de datos
@@ -173,7 +168,6 @@ public class GestorPeticion {
     /**
      *Método para modificar la entidad Peticion
      *@param IdPeticion
-     *@param Usuario
      *@param Nombre
      *@param Telefono1
      *@param Canal
@@ -183,15 +177,14 @@ public class GestorPeticion {
      *@param RegistroBitacora
      *@return 
      */
-    public Resultado ModificarPeticion( Long IdPeticion, String Usuario, String Nombre, String Telefono1, String Canal, String Tipo, String UsuarioBitacora, Date FechaBitacora,  String RegistroBitacora) 
+    public Resultado ModificarPeticion( Long IdPeticion, String Nombre, String Telefono1, String Canal, String Tipo, String UsuarioBitacora, Date FechaBitacora,  String RegistroBitacora) 
     {        
         //Se instancia el objeto resultado
         Resultado vObjResultado= new Resultado();                
         //Se valida la entidad
         vObjResultado = this.ValidarEntidad
             (
-                IdPeticion, 
-                Usuario, 
+                IdPeticion,
                 Nombre, 
                 Telefono1, 
                 Canal, 
@@ -210,23 +203,22 @@ public class GestorPeticion {
                 conexion = new ConexionBD();
                 //Se ingresa la sentencia sql
                 String sql = "UPDATE public.peticion SET "
-                    + "usuario=?,nombre=?,telefono1=?,canal=?,tipo=?,usuario_bitacora=?,fecha_bitacora=?,registro_bitacora=? WHERE idpeticion=?";
+                    + "nombre=?,telefono1=?,canal=?,tipo=?,usuario_bitacora=?,fecha_bitacora=?,registro_bitacora=? WHERE idpeticion=?";
                   
                 //Se obtiene la conexión y se prepara la sentencia
                 PreparedStatement consulta = conexion.getConexion().prepareStatement(sql);
             
                 // Definiendo valores para ?
             Date dat = new Date();  
-            java.sql.Date fecha = new java.sql.Date(dat.getTime());
-            consulta.setString(1,Usuario); 
-            consulta.setString(2,Nombre); 
-            consulta.setString(3,Telefono1);             
-            consulta.setString(4,Canal); 
-            consulta.setString(5,Tipo); 
-            consulta.setString(6,UsuarioBitacora);
-            consulta.setDate(7,fecha);
-            consulta.setString(8,RegistroBitacora);
-            consulta.setLong(9, IdPeticion);            
+            java.sql.Date fecha = new java.sql.Date(dat.getTime());            
+            consulta.setString(1,Nombre); 
+            consulta.setString(2,Telefono1);             
+            consulta.setString(3,Canal); 
+            consulta.setString(4,Tipo); 
+            consulta.setString(5,UsuarioBitacora);
+            consulta.setDate(6,fecha);
+            consulta.setString(7,RegistroBitacora);
+            consulta.setLong(8, IdPeticion);            
             // Ejecutando consulta
             consulta.executeUpdate();            
             // Se cierra la conexión a la base de datos
@@ -305,7 +297,7 @@ public class GestorPeticion {
         //Se retorna la entidad
         return vObjResultado;
     }
-    private Resultado ValidarEntidad( Long IdPeticion, String Usuario, String Nombre, String Telefono1, String Canal, String Tipo, String UsuarioBitacora, Date FechaBitacora,  String RegistroBitacora, boolean esInsertar) {
+    private Resultado ValidarEntidad( Long IdPeticion, String Nombre, String Telefono1, String Canal, String Tipo, String UsuarioBitacora, Date FechaBitacora,  String RegistroBitacora, boolean esInsertar) {
             // Predetermina valor de validación.
             Resultado pObjResultado = new Resultado();
             // Se inicializa el estado
@@ -320,11 +312,7 @@ public class GestorPeticion {
                     pObjResultado.setMensaje("Se requiere el identificador de la entidad Peticion");
                 }
             }
-            //Se validan los parámetros de entrada obligatorios
-            if(pObjResultado.EsValido()&&GeneralUtil.isNullOrEmpty(Usuario)){ 
-                pObjResultado.setEsValido(false); 
-                pObjResultado.setMensaje("Ingrese porfavor el campo Usuario"); 
-            } 
+            
             if(pObjResultado.EsValido()&&GeneralUtil.isNullOrEmpty(Canal)){ 
                 pObjResultado.setEsValido(false); 
                 pObjResultado.setMensaje("Ingrese porfavor el campo Canal"); 
