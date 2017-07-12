@@ -22,11 +22,12 @@ import java.math.BigDecimal;
  * @author Ariel Luis Gruich Arratia
  */
 @WebService(serviceName = "RegistroWS")
-public class RegistroWS {
+public class RegistroWS{
 
     /**
      * This is a sample web service operation
-     */
+     * 
+     */    
      /**
      *Método para obtener la lista de la entidad Canal
      * @return 
