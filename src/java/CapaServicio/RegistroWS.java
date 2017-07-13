@@ -15,7 +15,6 @@ import java.util.List;
 import CapaDatos.*;
 import CapaDatos.Resultado;
 import CapaNegocio.*;
-import java.math.BigDecimal;
 
 /**
  *
@@ -26,9 +25,9 @@ public class RegistroWS{
 
     /**
      * This is a sample web service operation
-     * 
-     */    
-     /**
+     */
+    
+    /**
      *Método para obtener la lista de la entidad Canal
      * @return 
      */
