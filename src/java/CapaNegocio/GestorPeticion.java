@@ -27,7 +27,7 @@ public class GestorPeticion {
             //Se instancia la conexión a la Base de datos
             conexion = new ConexionBD();
             //Se declara la sentencia sql
-            String sql = "SELECT * FROM public.peticion";
+            String sql = "SELECT * FROM public.peticion ORDER BY IdPeticion";
             //Se declara la variable de sentencia
             Statement consulta;
             //Se obtiene la conexión y se crea la declaración
@@ -42,6 +42,9 @@ public class GestorPeticion {
                 e.setTelefono1(registro.getString("telefono1"));                
                 e.setCanal(registro.getString("canal"));
                 e.setTipo(registro.getString("tipo"));
+                e.setCanal(registro.getString("accion"));
+                e.setCanal(registro.getString("departamento"));
+                e.setCanal(registro.getString("observaciones"));
                 e.setUsuarioBitacora(registro.getString("usuario_bitacora"));
                 e.setFechaBitacora(registro.getDate("fecha_bitacora"));
                 e.setRegistroBitacora(registro.getString("registro_bitacora"));                
@@ -83,6 +86,9 @@ public class GestorPeticion {
                 e.setTelefono1(registro.getString("telefono1"));                
                 e.setCanal(registro.getString("canal"));
                 e.setTipo(registro.getString("tipo"));
+                e.setCanal(registro.getString("accion"));
+                e.setCanal(registro.getString("departamento"));
+                e.setCanal(registro.getString("observaciones"));
                 e.setUsuarioBitacora(registro.getString("usuario_bitacora"));
                 e.setFechaBitacora(registro.getDate("fecha_bitacora"));
                 e.setRegistroBitacora(registro.getString("registro_bitacora"));
@@ -102,12 +108,15 @@ public class GestorPeticion {
      *@param Telefono1     
      *@param Canal
      *@param Tipo
+     *@param Accion
+     *@param Departamento
+     *@param Observaciones
      *@param UsuarioBitacora
      *@param FechaBitacora
      *@param RegistroBitacora
      *@return 
      */
-    public Resultado InsertarPeticion( String Nombre, String Telefono1, String Canal, String Tipo, String UsuarioBitacora, Date FechaBitacora,  String RegistroBitacora) 
+    public Resultado InsertarPeticion( String Nombre, String Telefono1, String Canal, String Tipo, String Accion, String Departamento, String Observaciones, String UsuarioBitacora, Date FechaBitacora,  String RegistroBitacora) 
     {       
         //Se instancia el objeto resultado
         Resultado vObjResultado= new Resultado();                
@@ -118,7 +127,10 @@ public class GestorPeticion {
             Nombre, 
             Telefono1,             
             Canal, 
-            Tipo, 
+            Tipo,
+            Accion,
+            Departamento,
+            Observaciones,
             UsuarioBitacora, 
             FechaBitacora, 
             RegistroBitacora,
@@ -133,7 +145,7 @@ public class GestorPeticion {
                 conexion = new ConexionBD();
                 //Se ingresa la sentencia sql
                 String sql = "INSERT INTO public.peticion "
-                    + "( nombre,  telefono1,  canal,  tipo, usuario_bitacora,fecha_bitacora,registro_bitacora) VALUES ( ?, ?, ?, ?, ?, ?,?)";
+                    + "( nombre,  telefono1,  canal,  tipo, accion, departamento, observaciones, usuario_bitacora,fecha_bitacora,registro_bitacora) VALUES ( ?, ?, ?, ?, ?, ?,?,?,?,?)";
                 //Se obtiene la conexión y se prepara la sentencia
                 PreparedStatement consulta = conexion.getConexion().prepareStatement(sql);
                 // Definiendo valores para ?                
@@ -144,9 +156,12 @@ public class GestorPeticion {
                 consulta.setString(2,Telefono1);                 
                 consulta.setString(3,Canal); 
                 consulta.setString(4,Tipo); 
-                consulta.setString(5,UsuarioBitacora);
-                consulta.setDate(6,fecha);
-                consulta.setString(7,RegistroBitacora);            
+                consulta.setString(5,Accion);
+                consulta.setString(6,Departamento);
+                consulta.setString(7,Observaciones);
+                consulta.setString(8,UsuarioBitacora);
+                consulta.setDate(9,fecha);
+                consulta.setString(10,RegistroBitacora);            
                 // Ejecutando consulta
                 consulta.executeUpdate();            
                 // Se cierra la conexión a la base de datos
@@ -172,12 +187,15 @@ public class GestorPeticion {
      *@param Telefono1
      *@param Canal
      *@param Tipo
+     *@param Accion
+     *@param Departamento
+     *@param Observaciones
      *@param UsuarioBitacora
      *@param FechaBitacora
      *@param RegistroBitacora
      *@return 
      */
-    public Resultado ModificarPeticion( Long IdPeticion, String Nombre, String Telefono1, String Canal, String Tipo, String UsuarioBitacora, Date FechaBitacora,  String RegistroBitacora) 
+    public Resultado ModificarPeticion( Long IdPeticion, String Nombre, String Telefono1, String Canal, String Tipo, String Accion, String Departamento, String Observaciones, String UsuarioBitacora, Date FechaBitacora,  String RegistroBitacora) 
     {        
         //Se instancia el objeto resultado
         Resultado vObjResultado= new Resultado();                
@@ -189,6 +207,9 @@ public class GestorPeticion {
                 Telefono1, 
                 Canal, 
                 Tipo, 
+                Accion,
+                Departamento,
+                Observaciones,
                 UsuarioBitacora, 
                 FechaBitacora, 
                 RegistroBitacora,
@@ -203,7 +224,7 @@ public class GestorPeticion {
                 conexion = new ConexionBD();
                 //Se ingresa la sentencia sql
                 String sql = "UPDATE public.peticion SET "
-                    + "nombre=?,telefono1=?,canal=?,tipo=?,usuario_bitacora=?,fecha_bitacora=?,registro_bitacora=? WHERE idpeticion=?";
+                    + "nombre=?,telefono1=?,canal=?,tipo=?,accion=?,departamento=?,observaciones=?,usuario_bitacora=?,fecha_bitacora=?,registro_bitacora=? WHERE idpeticion=?";
                   
                 //Se obtiene la conexión y se prepara la sentencia
                 PreparedStatement consulta = conexion.getConexion().prepareStatement(sql);
@@ -215,10 +236,13 @@ public class GestorPeticion {
             consulta.setString(2,Telefono1);             
             consulta.setString(3,Canal); 
             consulta.setString(4,Tipo); 
-            consulta.setString(5,UsuarioBitacora);
-            consulta.setDate(6,fecha);
-            consulta.setString(7,RegistroBitacora);
-            consulta.setLong(8, IdPeticion);            
+            consulta.setString(5,Accion);
+            consulta.setString(6,Departamento);
+            consulta.setString(7,Observaciones);
+            consulta.setString(8,UsuarioBitacora);
+            consulta.setDate(9,fecha);
+            consulta.setString(10,RegistroBitacora);
+            consulta.setLong(11, IdPeticion);            
             // Ejecutando consulta
             consulta.executeUpdate();            
             // Se cierra la conexión a la base de datos
@@ -297,7 +321,7 @@ public class GestorPeticion {
         //Se retorna la entidad
         return vObjResultado;
     }
-    private Resultado ValidarEntidad( Long IdPeticion, String Nombre, String Telefono1, String Canal, String Tipo, String UsuarioBitacora, Date FechaBitacora,  String RegistroBitacora, boolean esInsertar) {
+    private Resultado ValidarEntidad( Long IdPeticion, String Nombre, String Telefono1, String Canal, String Tipo, String Accion, String Departamento, String Observaciones, String UsuarioBitacora, Date FechaBitacora,  String RegistroBitacora, boolean esInsertar) {
             // Predetermina valor de validación.
             Resultado pObjResultado = new Resultado();
             // Se inicializa el estado

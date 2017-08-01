@@ -28,6 +28,84 @@ public class RegistroWS{
      */
     
     /**
+     *Método para obtener la lista de la entidad Departamento
+     * @return 
+     */
+    @WebMethod(operationName = "ObtenerListaCompletaDepartamento")
+    public List<BDepartamento> ObtenerListaCompletaDepartamento() {    
+       GestorDepartamento gf= new GestorDepartamento();
+       return gf.ObtenerListaCompletaDepartamento();
+    }
+    
+    /**
+     *Método para obtener la entidad Departamento a traves de su identificador único
+     * @param i
+     * @return 
+     */
+    @WebMethod(operationName = "ObtenerDepartamentoPorId")
+    public BDepartamento ObtenerDepartamentoPorId(@WebParam(name = "IdDepartamento")long i) {
+        GestorDepartamento gf= new GestorDepartamento();
+        return gf.ObtenerDepartamentoPorId(i);
+    }
+    
+    /**
+     *Método para insertar la entidad Departamento
+     *@param NombreDepartamento
+     *@param UsuarioBitacora     
+     *@param RegistroBitacora
+     *@return 
+     */
+    @WebMethod(operationName = "InsertarDepartamento")    
+    public Resultado InsertarDepartamento( @WebParam(name = "NombreDepartamento") String NombreDepartamento, 
+                                    @WebParam(name = "UsuarioBitacora") String UsuarioBitacora, 
+                                    @WebParam(name = "RegistroBitacora") String RegistroBitacora
+                                    ) 
+    {        
+        GestorDepartamento gf= new GestorDepartamento();
+        return gf.InsertarDepartamento( NombreDepartamento, 
+        UsuarioBitacora, RegistroBitacora);
+    }
+    
+     /**
+     *Método para modificar la entidad Departamento
+     *@param IdDepartamento
+     *@param NombreDepartamento
+     * @param UsuarioBitacora     
+     * @param FechaBitacora     
+     * @param RegistroBitacora
+     * @return 
+     */
+    @WebMethod(operationName = "ModificarDepartamento")
+    public Resultado ModificarDepartamento( @WebParam(name = "IdDepartamento") Long IdDepartamento,
+                                    @WebParam(name = "NombreDepartamento") String NombreDepartamento,
+                                    @WebParam(name = "UsuarioBitacora") String UsuarioBitacora, 
+                                    @WebParam(name = "FechaBitacora") Date FechaBitacora,
+                                    @WebParam(name = "RegistroBitacora") String RegistroBitacora
+                                   ) 
+    {
+        GestorDepartamento gf= new GestorDepartamento();
+        return gf.ModificarDepartamento( IdDepartamento, 
+        NombreDepartamento, 
+        UsuarioBitacora, FechaBitacora, RegistroBitacora);
+    }
+    
+    /**
+     *Método para eliminar la entidad Departamento
+     *@param IdDepartamento
+     *@return 
+    */
+    @WebMethod(operationName = "EliminarDepartamento")
+    public Resultado EliminarDepartamento(@WebParam(name = "IdDepartamento")Long IdDepartamento) 
+    {
+        GestorDepartamento gf= new GestorDepartamento();
+        return gf.EliminarDepartamento(IdDepartamento);
+    }     
+     /*    
+     */
+    
+    // fin Departamento
+    
+    /**
      *Método para obtener la lista de la entidad Canal
      * @return 
      */
@@ -71,20 +149,22 @@ public class RegistroWS{
      *@param IdCanal
      *@param NombreCanal
      * @param UsuarioBitacora     
+     * @param FechaBitacora     
      * @param RegistroBitacora
      * @return 
      */
     @WebMethod(operationName = "ModificarCanal")
     public Resultado ModificarCanal( @WebParam(name = "IdCanal") Long IdCanal,
-    @WebParam(name = "NombreCanal") String NombreCanal,
-                                    @WebParam(name = "UsuarioBitacora") String UsuarioBitacora,                                       
+                                    @WebParam(name = "NombreCanal") String NombreCanal,
+                                    @WebParam(name = "UsuarioBitacora") String UsuarioBitacora, 
+                                    @WebParam(name = "FechaBitacora") Date FechaBitacora,
                                     @WebParam(name = "RegistroBitacora") String RegistroBitacora
                                    ) 
     {
         GestorCanal gf= new GestorCanal();
         return gf.ModificarCanal( IdCanal, 
         NombreCanal, 
-        UsuarioBitacora, RegistroBitacora);
+        UsuarioBitacora, FechaBitacora, RegistroBitacora);
     }
     
     /**
@@ -207,7 +287,11 @@ public class RegistroWS{
      *@param Telefono1       
      *@param Canal
      *@param Tipo
+     *@param Accion
+     *@param Departamento
+     *@param Observaciones
      *@param UsuarioBitacora     
+     *@param FechaBitacora     
      *@param RegistroBitacora
      *@return 
      */
@@ -217,6 +301,9 @@ public class RegistroWS{
             @WebParam(name = "Telefono1") String Telefono1, 
             @WebParam(name = "Canal") String Canal,
             @WebParam(name = "Tipo") String Tipo,
+            @WebParam(name = "Accion") String Accion,
+            @WebParam(name = "Departamento") String Departamento,
+            @WebParam(name = "Observaciones") String Observaciones,
             @WebParam(name = "UsuarioBitacora") String UsuarioBitacora,             
             @WebParam(name = "FechaBitacora") Date FechaBitacora,  
             @WebParam(name = "RegistroBitacora") String RegistroBitacora
@@ -228,6 +315,9 @@ public class RegistroWS{
         Telefono1, 
         Canal, 
         Tipo, 
+        Accion,
+        Departamento,
+        Observaciones,
         UsuarioBitacora, FechaBitacora, RegistroBitacora);
     }
     
@@ -238,7 +328,11 @@ public class RegistroWS{
      *@param Telefono1  
      *@param Canal
      *@param Tipo
+     *@param Accion
+     *@param Departamento
+     *@param Observaciones
      *@param UsuarioBitacora     
+     *@param FechaBitacora     
      *@param RegistroBitacora
      *@return 
      */
@@ -249,6 +343,9 @@ public class RegistroWS{
             @WebParam(name = "Telefono1") String Telefono1,            
             @WebParam(name = "Canal") String Canal,
             @WebParam(name = "Tipo") String Tipo,
+            @WebParam(name = "Accion") String Accion,
+            @WebParam(name = "Departamento") String Departamento,
+            @WebParam(name = "Observaciones") String Observaciones,
             @WebParam(name = "UsuarioBitacora") String UsuarioBitacora, 
             @WebParam(name = "FechaBitacora") Date FechaBitacora,  
             @WebParam(name = "RegistroBitacora") String RegistroBitacora                                      
@@ -259,7 +356,10 @@ public class RegistroWS{
         Nombre, 
         Telefono1,         
         Canal, 
-        Tipo, 
+        Tipo,
+        Accion,
+        Departamento,
+        Observaciones,
         UsuarioBitacora, FechaBitacora, RegistroBitacora);
     }
     

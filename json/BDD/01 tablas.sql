@@ -10,7 +10,7 @@ create table Canal(
   usuario_bitacora varchar(50) null,
   fecha_bitacora timestamp(0) null,
   registro_bitacora varchar(50) null,
-  primary key (NombreCanal)
+  primary key (IdCanal)
 );
 
 create table Tipo(
@@ -19,9 +19,17 @@ create table Tipo(
   usuario_bitacora varchar(50) null,
   fecha_bitacora timestamp(0) null,
   registro_bitacora varchar(50) null,
-  primary key (NombreTipo)
+  primary key (IdTipo)
 );
 
+create table Departamento(
+  IdDepartamento serial,
+  NombreDepartamento varchar(50) not null,  
+  usuario_bitacora varchar(50) null,
+  fecha_bitacora timestamp(0) null,
+  registro_bitacora varchar(50) null,
+  primary key (IdCiudad)
+);
 
 create table Peticion(
   IdPeticion serial,  
@@ -29,6 +37,9 @@ create table Peticion(
   Telefono1 varchar(50) null,    
   Canal varchar(50) references Canal(NombreCanal),
   Tipo varchar(50) references Tipo(NombreTipo),
+  Accion varchar(50) null,
+  Ciudad varchar(50) references Departamento(NombreDepartamento),
+  Observaciones varchar(50) null,
   usuario_bitacora varchar(50) null,
   fecha_bitacora timestamp(0) null,
   registro_bitacora varchar(50) null,

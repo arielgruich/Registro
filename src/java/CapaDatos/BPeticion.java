@@ -12,6 +12,9 @@ public class BPeticion implements java.io.Serializable {
     private String Telefono1;    
     private String Canal;
     private String Tipo;
+    private String Accion;
+    private String Departamento;
+    private String Observaciones;
     private String UsuarioBitacora; 
     private Date FechaBitacora; 
     private String RegistroBitacora;
@@ -25,13 +28,16 @@ public class BPeticion implements java.io.Serializable {
     // Se crea el constructor de la clase
     public BPeticion() {
     }
-    public BPeticion ( Long idPeticion, String nombre, String telefono1, String canal, String tipo, String usuarioBitacora, Date fechaBitacora, String registroBitacora) 
+    public BPeticion ( Long idPeticion, String nombre, String telefono1, String canal, String tipo, String accion, String departamento, String observaciones, String usuarioBitacora, Date fechaBitacora, String registroBitacora) 
     {
         this.IdPeticion = idPeticion;
         this.Nombre = nombre;
         this.Telefono1 = telefono1;        
         this.Canal = canal;
-        this.Tipo = tipo; 
+        this.Tipo = tipo;
+        this.Accion = accion;
+        this.Departamento = departamento;
+        this.Observaciones = observaciones;
         this.UsuarioBitacora = usuarioBitacora;
         this.FechaBitacora = fechaBitacora;
         this.RegistroBitacora = registroBitacora; 
@@ -70,6 +76,25 @@ public class BPeticion implements java.io.Serializable {
     public void setTipo(String tipo) { 
         this.Tipo = tipo; 
     } 
+    
+    public String getAccion() { 
+        return this.Accion; 
+    }
+    public void setAccion(String accion) { 
+        this.Accion = accion; 
+    }
+    public String getDepartamento() { 
+        return this.Departamento; 
+    }
+    public void setDepartamento(String departamento) { 
+        this.Departamento = departamento; 
+    }
+    public String getObservaciones() { 
+        return this.Observaciones; 
+    }
+    public void setObservaciones(String observaciones) { 
+        this.Observaciones = observaciones; 
+    }
     public String getUsuarioBitacora() {
         return this.UsuarioBitacora;
     }

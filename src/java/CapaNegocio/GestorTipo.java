@@ -31,7 +31,7 @@ public class GestorTipo {
             //Se instancia la conexión a la Base de datos
             conexion = new ConexionBD();
             //Se declara la sentencia sql
-            String sql = "SELECT * FROM public.tipo";
+            String sql = "SELECT * FROM public.tipo ORDER BY idtipo";
             //Se declara la variable de sentencia
             Statement consulta;
             //Se obtiene la conexión y se crea la declaración

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package CapaNegocio;
-import CapaDatos.BCanal;
+import CapaDatos.BDepartamento;
 import CapaDatos.Resultado;
 import java.util.Date;
 import java.sql.Statement;
@@ -14,24 +14,24 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 /**
- * @author Ariel Luis Gruich Arratia
- * @Gestor Canal
+ *
+ * @author agruich
  */
-public class GestorCanal {
+public class GestorDepartamento {
 //Se define la variable conexión
     private ConexionBD conexion;
     /**
-     *Método para obtener la lista de la entidad Canal 
+     *Método para obtener la lista de la entidad Departamento
      * @return 
      */
-    public List<BCanal> ObtenerListaCompletaCanal() {
+    public List<BDepartamento> ObtenerListaCompletaDepartamento() {
     //Se instancia la lista de la entidad
-        List<BCanal> lista = new ArrayList();
+        List<BDepartamento> lista = new ArrayList();
         try {
             //Se instancia la conexión a la Base de datos
             conexion = new ConexionBD();
             //Se declara la sentencia sql
-            String sql = "SELECT * FROM public.canal";
+            String sql = "SELECT * FROM public.departamento";
             //Se declara la variable de sentencia
             Statement consulta;
             //Se obtiene la conexión y se crea la declaración
@@ -40,9 +40,9 @@ public class GestorCanal {
             ResultSet registro = consulta.executeQuery(sql);
             //Se recorre los componentes del resultado obtenido
             while (registro.next()) {
-                BCanal e = new BCanal ();
-                e.setIdCanal(registro.getLong("idcanal"));
-                e.setNombreCanal(registro.getString("nombrecanal"));
+                BDepartamento e = new BDepartamento ();
+                e.setIdDepartamento(registro.getLong("iddepartamento"));
+                e.setNombreDepartamento(registro.getString("nombredepartamento"));
                 e.setUsuarioBitacora(registro.getString("usuario_bitacora"));                
                 e.setFechaBitacora(registro.getDate("fecha_bitacora"));
                 e.setRegistroBitacora(registro.getString("registro_bitacora"));                
@@ -62,14 +62,14 @@ public class GestorCanal {
      * @param i
      * @return 
      */
-     public BCanal ObtenerCanalPorId(long i) {
+     public BDepartamento ObtenerDepartamentoPorId(long i) {
 //Se inicializa la entidad
-        BCanal  e = null;
+        BDepartamento  e = null;
         try {
             //Se inicializa la entidad
             conexion = new ConexionBD();
             //Se ingresa la sentencia sql
-            String sql = "SELECT * FROM public.canal WHERE idcanal=?";
+            String sql = "SELECT * FROM public.departamento WHERE iddepartamento=?";
             //Se obtiene la conexión y se prepara la sentencia
             PreparedStatement consulta = conexion.getConexion().prepareStatement(sql);
             //Se asigna el valor a la consulta
@@ -78,9 +78,9 @@ public class GestorCanal {
             ResultSet registro=consulta.executeQuery();
             //Se valida si existe un registro en el resultado
             if(registro.next()){
-                e=new BCanal();
-                e.setIdCanal(registro.getLong("idcanal"));
-                e.setNombreCanal(registro.getString("nombrecanal"));
+                e=new BDepartamento();
+                e.setIdDepartamento(registro.getLong("iddepartamento"));
+                e.setNombreDepartamento(registro.getString("nombredepartamento"));
                 e.setUsuarioBitacora(registro.getString("usuario_bitacora"));                
                 e.setFechaBitacora(registro.getDate("fecha_bitacora"));
                 e.setRegistroBitacora(registro.getString("registro_bitacora"));
@@ -95,14 +95,14 @@ public class GestorCanal {
     }
      
     /**
-     *Método para insertar la entidad Canal
-      *@param NombreCanal
+     *Método para insertar la entidad Departamento
+      *@param NombreDepartamento
      * @param UsuarioBitacora
      * @param FechaBitacora
      * @param RegistroBitacora
      * @return 
      */
-    public Resultado InsertarCanal( String NombreCanal, String UsuarioBitacora, String RegistroBitacora) 
+    public Resultado InsertarDepartamento( String NombreDepartamento, String UsuarioBitacora, String RegistroBitacora) 
     {
         
         //Se instancia el objeto resultado
@@ -112,7 +112,7 @@ public class GestorCanal {
         vObjResultado = this.ValidarEntidad
         (
             Long.parseLong("0"),
-            NombreCanal, 
+            NombreDepartamento, 
             UsuarioBitacora,             
             FechaBitacora, 
             RegistroBitacora,
@@ -126,15 +126,15 @@ public class GestorCanal {
                 //Se instancia la conexión a la Base de datos
                 conexion = new ConexionBD();
                 //Se ingresa la sentencia sql
-                String sql = "INSERT INTO public.canal "
-                    + "( nombrecanal, usuario_bitacora, fecha_bitacora, registro_bitacora) VALUES ( ?,?,?,?)";
+                String sql = "INSERT INTO public.departamento "
+                    + "( nombredepartamento, usuario_bitacora, fecha_bitacora, registro_bitacora) VALUES ( ?,?,?,?)";
                 //Se obtiene la conexión y se prepara la sentencia
                 PreparedStatement consulta = conexion.getConexion().prepareStatement(sql);
             
                 // Definiendo valores para ?
                 Date dat = new Date();  
                 java.sql.Date fecha = new java.sql.Date(dat.getTime()); 
-                consulta.setString(1,NombreCanal); 
+                consulta.setString(1,NombreDepartamento); 
                 consulta.setString(2,UsuarioBitacora);
                 consulta.setDate(3,fecha);
                 consulta.setString(4,RegistroBitacora);
@@ -163,15 +163,15 @@ public class GestorCanal {
         }
         
     /**
-     *Método para modificar la entidad Canal
-     *@param IdCanal
-     *@param NombreCanal
+     *Método para modificar la entidad Departamento
+     *@param IdDepartamento
+     *@param NombreDepartamento
      *@param UsuarioBitacora     
      *@param FechaBitacora
      *@param RegistroBitacora
      *@return 
      */
-    public Resultado ModificarCanal( Long IdCanal, String NombreCanal, String UsuarioBitacora, Date FechaBitacora, String RegistroBitacora) 
+    public Resultado ModificarDepartamento( Long IdDepartamento, String NombreDepartamento, String UsuarioBitacora, Date FechaBitacora, String RegistroBitacora) 
     {
         
         //Se instancia el objeto resultado
@@ -181,8 +181,8 @@ public class GestorCanal {
         //Se valida la entidad
         vObjResultado = this.ValidarEntidad
         (
-            IdCanal, 
-            NombreCanal, 
+            IdDepartamento, 
+            NombreDepartamento, 
             UsuarioBitacora,             
             FechaBitacora, 
             RegistroBitacora,
@@ -196,8 +196,8 @@ public class GestorCanal {
                 //Se instancia la conexión a la Base de datos
                 conexion = new ConexionBD();
                 //Se ingresa la sentencia sql
-                String sql = "UPDATE public.canal SET "
-                    + "nombrecanal=?,usuario_bitacora=?,fecha_bitacora=?,registro_bitacora=? WHERE idcanal=?";
+                String sql = "UPDATE public.departamento SET "
+                    + "nombredepartamento=?,usuario_bitacora=?,fecha_bitacora=?,registro_bitacora=? WHERE iddepartamento=?";
                   
                 //Se obtiene la conexión y se prepara la sentencia
                 PreparedStatement consulta = conexion.getConexion().prepareStatement(sql);
@@ -205,11 +205,11 @@ public class GestorCanal {
                 // Definiendo valores para ?
                 Date dat = new Date();  
                 java.sql.Date fecha = new java.sql.Date(dat.getTime());
-                consulta.setString(1,NombreCanal); 
+                consulta.setString(1,NombreDepartamento); 
                 consulta.setString(2,UsuarioBitacora);
                 consulta.setDate(3,fecha);
                 consulta.setString(4,RegistroBitacora);
-                consulta.setLong(5, IdCanal);
+                consulta.setLong(5, IdDepartamento);
             
                 // Ejecutando consulta
                 consulta.executeUpdate();
@@ -233,35 +233,35 @@ public class GestorCanal {
     }
     
     /**
-     *Método para eliminar la entidad Canal
-     *@param IdCanal
+     *Método para eliminar la entidad Departamento
+     *@param IdDepartamento
      *@return 
      */
-    public Resultado EliminarCanal(Long IdCanal) 
+    public Resultado EliminarDepartamento(Long IdDepartamento) 
     {
          //Se instancia el objeto resultado
         Resultado vObjResultado= new Resultado();
         
         //Se verifica que el identificador sea válido
-        if(IdCanal>0)
+        if(IdDepartamento>0)
         {
             //Se inicializa el objeto transacción
             try{
                 //Se instancia la conexión a la Base de datos
                 conexion = new ConexionBD();
                 //Se ingresa la sentencia sql
-                String sql = "DELETE FROM public.canal WHERE idcanal=?";
+                String sql = "DELETE FROM public.departamento WHERE iddepartamento=?";
                 //Se obtiene la conexion y se prepara la sentencia
                 PreparedStatement consulta = conexion.getConexion().prepareStatement(sql);
                 //Asignación de valores a la consulta
-                consulta.setLong(1, IdCanal);
+                consulta.setLong(1, IdDepartamento);
                 //Se ejecuta la consulta y se asigna el resultado
                 int nroEliminados = consulta.executeUpdate();
                 // Se cierra la conexión a la base de datos
                 conexion.getConexion().close();
                 // Se verifica si se realizó la eliminación
                 if (nroEliminados > 0) {
-                    System.out.println("Registro Eliminado :" + IdCanal);
+                    System.out.println("Registro Eliminado :" + IdDepartamento);
                     // Se asigna al objeto el resultado obtenido
                     vObjResultado.setEsValido(true);
                     vObjResultado.setValido("true");
@@ -269,7 +269,7 @@ public class GestorCanal {
                     return vObjResultado;
                 }else{
                     // Se asigna al objeto el resultado obtenido
-                    vObjResultado.setMensaje("No existe Registro Nro. : "+IdCanal);
+                    vObjResultado.setMensaje("No existe Registro Nro. : "+IdDepartamento);
                     vObjResultado.setEsValido(false);
                     vObjResultado.setValido("false");
                 }
@@ -293,7 +293,7 @@ public class GestorCanal {
         //Se retorna la entidad
         return vObjResultado;
     }
-    private Resultado ValidarEntidad( Long IdCanal, String NombreCanal, String UsuarioBitacora, Date FechaBitacora,  String RegistroBitacora, boolean esInsertar) {
+    private Resultado ValidarEntidad( Long IdDepartamento, String NombreDepartamento, String UsuarioBitacora, Date FechaBitacora,  String RegistroBitacora, boolean esInsertar) {
           
             // Predetermina valor de validación.
             Resultado pObjResultado = new Resultado();
@@ -303,17 +303,17 @@ public class GestorCanal {
             if(!esInsertar)
             {
                 //Se valida el identificador de la entidad Fuente
-                if(IdCanal<=0)
+                if(IdDepartamento<=0)
                 {
                     pObjResultado.setEsValido(false);
-                    pObjResultado.setMensaje("Se requiere el identificador de la entidad Canal");
+                    pObjResultado.setMensaje("Se requiere el identificador de la entidad Departamento");
                 }
             }
             
             //Se validan los parámetros de entrada obligatorios
-            if(pObjResultado.EsValido()&&GeneralUtil.isNullOrEmpty(NombreCanal)){ 
+            if(pObjResultado.EsValido()&&GeneralUtil.isNullOrEmpty(NombreDepartamento)){ 
                 pObjResultado.setEsValido(false); 
-                pObjResultado.setMensaje("Ingrese porfavor el campo NombreCanal"); 
+                pObjResultado.setMensaje("Ingrese porfavor el campo NombreDepartamento"); 
             } 
     
              else if(pObjResultado.EsValido()&& GeneralUtil.isNullOrEmpty(UsuarioBitacora))
