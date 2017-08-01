@@ -7,77 +7,11 @@
       <xsd:import namespace="http://CapaServicio/" schemaLocation="http://172.20.16.247:8080/Registro/RegistroWS?xsd=1"/>
     </xsd:schema>
   </types>
-  <message name="ObtenerListaCompletaTipo">
-    <part name="parameters" element="tns:ObtenerListaCompletaTipo"/>
-  </message>
-  <message name="ObtenerListaCompletaTipoResponse">
-    <part name="parameters" element="tns:ObtenerListaCompletaTipoResponse"/>
-  </message>
-  <message name="ObtenerListaCompletaPeticion">
-    <part name="parameters" element="tns:ObtenerListaCompletaPeticion"/>
-  </message>
-  <message name="ObtenerListaCompletaPeticionResponse">
-    <part name="parameters" element="tns:ObtenerListaCompletaPeticionResponse"/>
-  </message>
-  <message name="ObtenerListaCompletaCanal">
-    <part name="parameters" element="tns:ObtenerListaCompletaCanal"/>
-  </message>
-  <message name="ObtenerListaCompletaCanalResponse">
-    <part name="parameters" element="tns:ObtenerListaCompletaCanalResponse"/>
-  </message>
-  <message name="ObtenerCanalPorId">
-    <part name="parameters" element="tns:ObtenerCanalPorId"/>
-  </message>
-  <message name="ObtenerCanalPorIdResponse">
-    <part name="parameters" element="tns:ObtenerCanalPorIdResponse"/>
-  </message>
-  <message name="ObtenerPeticionPorId">
-    <part name="parameters" element="tns:ObtenerPeticionPorId"/>
-  </message>
-  <message name="ObtenerPeticionPorIdResponse">
-    <part name="parameters" element="tns:ObtenerPeticionPorIdResponse"/>
-  </message>
-  <message name="ModificarPeticion">
-    <part name="parameters" element="tns:ModificarPeticion"/>
-  </message>
-  <message name="ModificarPeticionResponse">
-    <part name="parameters" element="tns:ModificarPeticionResponse"/>
-  </message>
-  <message name="ObtenerTipoPorId">
-    <part name="parameters" element="tns:ObtenerTipoPorId"/>
-  </message>
-  <message name="ObtenerTipoPorIdResponse">
-    <part name="parameters" element="tns:ObtenerTipoPorIdResponse"/>
-  </message>
-  <message name="ModificarTipo">
-    <part name="parameters" element="tns:ModificarTipo"/>
-  </message>
-  <message name="ModificarTipoResponse">
-    <part name="parameters" element="tns:ModificarTipoResponse"/>
-  </message>
   <message name="EliminarTipo">
     <part name="parameters" element="tns:EliminarTipo"/>
   </message>
   <message name="EliminarTipoResponse">
     <part name="parameters" element="tns:EliminarTipoResponse"/>
-  </message>
-  <message name="InsertarPeticion">
-    <part name="parameters" element="tns:InsertarPeticion"/>
-  </message>
-  <message name="InsertarPeticionResponse">
-    <part name="parameters" element="tns:InsertarPeticionResponse"/>
-  </message>
-  <message name="ModificarCanal">
-    <part name="parameters" element="tns:ModificarCanal"/>
-  </message>
-  <message name="ModificarCanalResponse">
-    <part name="parameters" element="tns:ModificarCanalResponse"/>
-  </message>
-  <message name="InsertarCanal">
-    <part name="parameters" element="tns:InsertarCanal"/>
-  </message>
-  <message name="InsertarCanalResponse">
-    <part name="parameters" element="tns:InsertarCanalResponse"/>
   </message>
   <message name="InsertarTipo">
     <part name="parameters" element="tns:InsertarTipo"/>
@@ -85,11 +19,29 @@
   <message name="InsertarTipoResponse">
     <part name="parameters" element="tns:InsertarTipoResponse"/>
   </message>
+  <message name="ModificarTipo">
+    <part name="parameters" element="tns:ModificarTipo"/>
+  </message>
+  <message name="ModificarTipoResponse">
+    <part name="parameters" element="tns:ModificarTipoResponse"/>
+  </message>
+  <message name="ModificarCanal">
+    <part name="parameters" element="tns:ModificarCanal"/>
+  </message>
+  <message name="ModificarCanalResponse">
+    <part name="parameters" element="tns:ModificarCanalResponse"/>
+  </message>
   <message name="EliminarCanal">
     <part name="parameters" element="tns:EliminarCanal"/>
   </message>
   <message name="EliminarCanalResponse">
     <part name="parameters" element="tns:EliminarCanalResponse"/>
+  </message>
+  <message name="InsertarPeticion">
+    <part name="parameters" element="tns:InsertarPeticion"/>
+  </message>
+  <message name="InsertarPeticionResponse">
+    <part name="parameters" element="tns:InsertarPeticionResponse"/>
   </message>
   <message name="EliminarPeticion">
     <part name="parameters" element="tns:EliminarPeticion"/>
@@ -97,170 +49,169 @@
   <message name="EliminarPeticionResponse">
     <part name="parameters" element="tns:EliminarPeticionResponse"/>
   </message>
+  <message name="ObtenerTipoPorId">
+    <part name="parameters" element="tns:ObtenerTipoPorId"/>
+  </message>
+  <message name="ObtenerTipoPorIdResponse">
+    <part name="parameters" element="tns:ObtenerTipoPorIdResponse"/>
+  </message>
+  <message name="InsertarCanal">
+    <part name="parameters" element="tns:InsertarCanal"/>
+  </message>
+  <message name="InsertarCanalResponse">
+    <part name="parameters" element="tns:InsertarCanalResponse"/>
+  </message>
+  <message name="ObtenerDepartamentoPorId">
+    <part name="parameters" element="tns:ObtenerDepartamentoPorId"/>
+  </message>
+  <message name="ObtenerDepartamentoPorIdResponse">
+    <part name="parameters" element="tns:ObtenerDepartamentoPorIdResponse"/>
+  </message>
+  <message name="ObtenerListaCompletaDepartamento">
+    <part name="parameters" element="tns:ObtenerListaCompletaDepartamento"/>
+  </message>
+  <message name="ObtenerListaCompletaDepartamentoResponse">
+    <part name="parameters" element="tns:ObtenerListaCompletaDepartamentoResponse"/>
+  </message>
+  <message name="ObtenerListaCompletaTipo">
+    <part name="parameters" element="tns:ObtenerListaCompletaTipo"/>
+  </message>
+  <message name="ObtenerListaCompletaTipoResponse">
+    <part name="parameters" element="tns:ObtenerListaCompletaTipoResponse"/>
+  </message>
+  <message name="EliminarDepartamento">
+    <part name="parameters" element="tns:EliminarDepartamento"/>
+  </message>
+  <message name="EliminarDepartamentoResponse">
+    <part name="parameters" element="tns:EliminarDepartamentoResponse"/>
+  </message>
+  <message name="ModificarDepartamento">
+    <part name="parameters" element="tns:ModificarDepartamento"/>
+  </message>
+  <message name="ModificarDepartamentoResponse">
+    <part name="parameters" element="tns:ModificarDepartamentoResponse"/>
+  </message>
+  <message name="ObtenerListaCompletaCanal">
+    <part name="parameters" element="tns:ObtenerListaCompletaCanal"/>
+  </message>
+  <message name="ObtenerListaCompletaCanalResponse">
+    <part name="parameters" element="tns:ObtenerListaCompletaCanalResponse"/>
+  </message>
+  <message name="InsertarDepartamento">
+    <part name="parameters" element="tns:InsertarDepartamento"/>
+  </message>
+  <message name="InsertarDepartamentoResponse">
+    <part name="parameters" element="tns:InsertarDepartamentoResponse"/>
+  </message>
+  <message name="ObtenerCanalPorId">
+    <part name="parameters" element="tns:ObtenerCanalPorId"/>
+  </message>
+  <message name="ObtenerCanalPorIdResponse">
+    <part name="parameters" element="tns:ObtenerCanalPorIdResponse"/>
+  </message>
+  <message name="ModificarPeticion">
+    <part name="parameters" element="tns:ModificarPeticion"/>
+  </message>
+  <message name="ModificarPeticionResponse">
+    <part name="parameters" element="tns:ModificarPeticionResponse"/>
+  </message>
+  <message name="ObtenerListaCompletaPeticion">
+    <part name="parameters" element="tns:ObtenerListaCompletaPeticion"/>
+  </message>
+  <message name="ObtenerListaCompletaPeticionResponse">
+    <part name="parameters" element="tns:ObtenerListaCompletaPeticionResponse"/>
+  </message>
+  <message name="ObtenerPeticionPorId">
+    <part name="parameters" element="tns:ObtenerPeticionPorId"/>
+  </message>
+  <message name="ObtenerPeticionPorIdResponse">
+    <part name="parameters" element="tns:ObtenerPeticionPorIdResponse"/>
+  </message>
   <portType name="RegistroWS">
-    <operation name="ObtenerListaCompletaTipo">
-      <input wsam:Action="http://CapaServicio/RegistroWS/ObtenerListaCompletaTipoRequest" message="tns:ObtenerListaCompletaTipo"/>
-      <output wsam:Action="http://CapaServicio/RegistroWS/ObtenerListaCompletaTipoResponse" message="tns:ObtenerListaCompletaTipoResponse"/>
-    </operation>
-    <operation name="ObtenerListaCompletaPeticion">
-      <input wsam:Action="http://CapaServicio/RegistroWS/ObtenerListaCompletaPeticionRequest" message="tns:ObtenerListaCompletaPeticion"/>
-      <output wsam:Action="http://CapaServicio/RegistroWS/ObtenerListaCompletaPeticionResponse" message="tns:ObtenerListaCompletaPeticionResponse"/>
-    </operation>
-    <operation name="ObtenerListaCompletaCanal">
-      <input wsam:Action="http://CapaServicio/RegistroWS/ObtenerListaCompletaCanalRequest" message="tns:ObtenerListaCompletaCanal"/>
-      <output wsam:Action="http://CapaServicio/RegistroWS/ObtenerListaCompletaCanalResponse" message="tns:ObtenerListaCompletaCanalResponse"/>
-    </operation>
-    <operation name="ObtenerCanalPorId">
-      <input wsam:Action="http://CapaServicio/RegistroWS/ObtenerCanalPorIdRequest" message="tns:ObtenerCanalPorId"/>
-      <output wsam:Action="http://CapaServicio/RegistroWS/ObtenerCanalPorIdResponse" message="tns:ObtenerCanalPorIdResponse"/>
-    </operation>
-    <operation name="ObtenerPeticionPorId">
-      <input wsam:Action="http://CapaServicio/RegistroWS/ObtenerPeticionPorIdRequest" message="tns:ObtenerPeticionPorId"/>
-      <output wsam:Action="http://CapaServicio/RegistroWS/ObtenerPeticionPorIdResponse" message="tns:ObtenerPeticionPorIdResponse"/>
-    </operation>
-    <operation name="ModificarPeticion">
-      <input wsam:Action="http://CapaServicio/RegistroWS/ModificarPeticionRequest" message="tns:ModificarPeticion"/>
-      <output wsam:Action="http://CapaServicio/RegistroWS/ModificarPeticionResponse" message="tns:ModificarPeticionResponse"/>
-    </operation>
-    <operation name="ObtenerTipoPorId">
-      <input wsam:Action="http://CapaServicio/RegistroWS/ObtenerTipoPorIdRequest" message="tns:ObtenerTipoPorId"/>
-      <output wsam:Action="http://CapaServicio/RegistroWS/ObtenerTipoPorIdResponse" message="tns:ObtenerTipoPorIdResponse"/>
-    </operation>
-    <operation name="ModificarTipo">
-      <input wsam:Action="http://CapaServicio/RegistroWS/ModificarTipoRequest" message="tns:ModificarTipo"/>
-      <output wsam:Action="http://CapaServicio/RegistroWS/ModificarTipoResponse" message="tns:ModificarTipoResponse"/>
-    </operation>
     <operation name="EliminarTipo">
       <input wsam:Action="http://CapaServicio/RegistroWS/EliminarTipoRequest" message="tns:EliminarTipo"/>
       <output wsam:Action="http://CapaServicio/RegistroWS/EliminarTipoResponse" message="tns:EliminarTipoResponse"/>
-    </operation>
-    <operation name="InsertarPeticion">
-      <input wsam:Action="http://CapaServicio/RegistroWS/InsertarPeticionRequest" message="tns:InsertarPeticion"/>
-      <output wsam:Action="http://CapaServicio/RegistroWS/InsertarPeticionResponse" message="tns:InsertarPeticionResponse"/>
-    </operation>
-    <operation name="ModificarCanal">
-      <input wsam:Action="http://CapaServicio/RegistroWS/ModificarCanalRequest" message="tns:ModificarCanal"/>
-      <output wsam:Action="http://CapaServicio/RegistroWS/ModificarCanalResponse" message="tns:ModificarCanalResponse"/>
-    </operation>
-    <operation name="InsertarCanal">
-      <input wsam:Action="http://CapaServicio/RegistroWS/InsertarCanalRequest" message="tns:InsertarCanal"/>
-      <output wsam:Action="http://CapaServicio/RegistroWS/InsertarCanalResponse" message="tns:InsertarCanalResponse"/>
     </operation>
     <operation name="InsertarTipo">
       <input wsam:Action="http://CapaServicio/RegistroWS/InsertarTipoRequest" message="tns:InsertarTipo"/>
       <output wsam:Action="http://CapaServicio/RegistroWS/InsertarTipoResponse" message="tns:InsertarTipoResponse"/>
     </operation>
+    <operation name="ModificarTipo">
+      <input wsam:Action="http://CapaServicio/RegistroWS/ModificarTipoRequest" message="tns:ModificarTipo"/>
+      <output wsam:Action="http://CapaServicio/RegistroWS/ModificarTipoResponse" message="tns:ModificarTipoResponse"/>
+    </operation>
+    <operation name="ModificarCanal">
+      <input wsam:Action="http://CapaServicio/RegistroWS/ModificarCanalRequest" message="tns:ModificarCanal"/>
+      <output wsam:Action="http://CapaServicio/RegistroWS/ModificarCanalResponse" message="tns:ModificarCanalResponse"/>
+    </operation>
     <operation name="EliminarCanal">
       <input wsam:Action="http://CapaServicio/RegistroWS/EliminarCanalRequest" message="tns:EliminarCanal"/>
       <output wsam:Action="http://CapaServicio/RegistroWS/EliminarCanalResponse" message="tns:EliminarCanalResponse"/>
+    </operation>
+    <operation name="InsertarPeticion">
+      <input wsam:Action="http://CapaServicio/RegistroWS/InsertarPeticionRequest" message="tns:InsertarPeticion"/>
+      <output wsam:Action="http://CapaServicio/RegistroWS/InsertarPeticionResponse" message="tns:InsertarPeticionResponse"/>
     </operation>
     <operation name="EliminarPeticion">
       <input wsam:Action="http://CapaServicio/RegistroWS/EliminarPeticionRequest" message="tns:EliminarPeticion"/>
       <output wsam:Action="http://CapaServicio/RegistroWS/EliminarPeticionResponse" message="tns:EliminarPeticionResponse"/>
     </operation>
+    <operation name="ObtenerTipoPorId">
+      <input wsam:Action="http://CapaServicio/RegistroWS/ObtenerTipoPorIdRequest" message="tns:ObtenerTipoPorId"/>
+      <output wsam:Action="http://CapaServicio/RegistroWS/ObtenerTipoPorIdResponse" message="tns:ObtenerTipoPorIdResponse"/>
+    </operation>
+    <operation name="InsertarCanal">
+      <input wsam:Action="http://CapaServicio/RegistroWS/InsertarCanalRequest" message="tns:InsertarCanal"/>
+      <output wsam:Action="http://CapaServicio/RegistroWS/InsertarCanalResponse" message="tns:InsertarCanalResponse"/>
+    </operation>
+    <operation name="ObtenerDepartamentoPorId">
+      <input wsam:Action="http://CapaServicio/RegistroWS/ObtenerDepartamentoPorIdRequest" message="tns:ObtenerDepartamentoPorId"/>
+      <output wsam:Action="http://CapaServicio/RegistroWS/ObtenerDepartamentoPorIdResponse" message="tns:ObtenerDepartamentoPorIdResponse"/>
+    </operation>
+    <operation name="ObtenerListaCompletaDepartamento">
+      <input wsam:Action="http://CapaServicio/RegistroWS/ObtenerListaCompletaDepartamentoRequest" message="tns:ObtenerListaCompletaDepartamento"/>
+      <output wsam:Action="http://CapaServicio/RegistroWS/ObtenerListaCompletaDepartamentoResponse" message="tns:ObtenerListaCompletaDepartamentoResponse"/>
+    </operation>
+    <operation name="ObtenerListaCompletaTipo">
+      <input wsam:Action="http://CapaServicio/RegistroWS/ObtenerListaCompletaTipoRequest" message="tns:ObtenerListaCompletaTipo"/>
+      <output wsam:Action="http://CapaServicio/RegistroWS/ObtenerListaCompletaTipoResponse" message="tns:ObtenerListaCompletaTipoResponse"/>
+    </operation>
+    <operation name="EliminarDepartamento">
+      <input wsam:Action="http://CapaServicio/RegistroWS/EliminarDepartamentoRequest" message="tns:EliminarDepartamento"/>
+      <output wsam:Action="http://CapaServicio/RegistroWS/EliminarDepartamentoResponse" message="tns:EliminarDepartamentoResponse"/>
+    </operation>
+    <operation name="ModificarDepartamento">
+      <input wsam:Action="http://CapaServicio/RegistroWS/ModificarDepartamentoRequest" message="tns:ModificarDepartamento"/>
+      <output wsam:Action="http://CapaServicio/RegistroWS/ModificarDepartamentoResponse" message="tns:ModificarDepartamentoResponse"/>
+    </operation>
+    <operation name="ObtenerListaCompletaCanal">
+      <input wsam:Action="http://CapaServicio/RegistroWS/ObtenerListaCompletaCanalRequest" message="tns:ObtenerListaCompletaCanal"/>
+      <output wsam:Action="http://CapaServicio/RegistroWS/ObtenerListaCompletaCanalResponse" message="tns:ObtenerListaCompletaCanalResponse"/>
+    </operation>
+    <operation name="InsertarDepartamento">
+      <input wsam:Action="http://CapaServicio/RegistroWS/InsertarDepartamentoRequest" message="tns:InsertarDepartamento"/>
+      <output wsam:Action="http://CapaServicio/RegistroWS/InsertarDepartamentoResponse" message="tns:InsertarDepartamentoResponse"/>
+    </operation>
+    <operation name="ObtenerCanalPorId">
+      <input wsam:Action="http://CapaServicio/RegistroWS/ObtenerCanalPorIdRequest" message="tns:ObtenerCanalPorId"/>
+      <output wsam:Action="http://CapaServicio/RegistroWS/ObtenerCanalPorIdResponse" message="tns:ObtenerCanalPorIdResponse"/>
+    </operation>
+    <operation name="ModificarPeticion">
+      <input wsam:Action="http://CapaServicio/RegistroWS/ModificarPeticionRequest" message="tns:ModificarPeticion"/>
+      <output wsam:Action="http://CapaServicio/RegistroWS/ModificarPeticionResponse" message="tns:ModificarPeticionResponse"/>
+    </operation>
+    <operation name="ObtenerListaCompletaPeticion">
+      <input wsam:Action="http://CapaServicio/RegistroWS/ObtenerListaCompletaPeticionRequest" message="tns:ObtenerListaCompletaPeticion"/>
+      <output wsam:Action="http://CapaServicio/RegistroWS/ObtenerListaCompletaPeticionResponse" message="tns:ObtenerListaCompletaPeticionResponse"/>
+    </operation>
+    <operation name="ObtenerPeticionPorId">
+      <input wsam:Action="http://CapaServicio/RegistroWS/ObtenerPeticionPorIdRequest" message="tns:ObtenerPeticionPorId"/>
+      <output wsam:Action="http://CapaServicio/RegistroWS/ObtenerPeticionPorIdResponse" message="tns:ObtenerPeticionPorIdResponse"/>
+    </operation>
   </portType>
   <binding name="RegistroWSPortBinding" type="tns:RegistroWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-    <operation name="ObtenerListaCompletaTipo">
-      <soap:operation soapAction=""/>
-      <input>
-        <soap:body use="literal"/>
-      </input>
-      <output>
-        <soap:body use="literal"/>
-      </output>
-    </operation>
-    <operation name="ObtenerListaCompletaPeticion">
-      <soap:operation soapAction=""/>
-      <input>
-        <soap:body use="literal"/>
-      </input>
-      <output>
-        <soap:body use="literal"/>
-      </output>
-    </operation>
-    <operation name="ObtenerListaCompletaCanal">
-      <soap:operation soapAction=""/>
-      <input>
-        <soap:body use="literal"/>
-      </input>
-      <output>
-        <soap:body use="literal"/>
-      </output>
-    </operation>
-    <operation name="ObtenerCanalPorId">
-      <soap:operation soapAction=""/>
-      <input>
-        <soap:body use="literal"/>
-      </input>
-      <output>
-        <soap:body use="literal"/>
-      </output>
-    </operation>
-    <operation name="ObtenerPeticionPorId">
-      <soap:operation soapAction=""/>
-      <input>
-        <soap:body use="literal"/>
-      </input>
-      <output>
-        <soap:body use="literal"/>
-      </output>
-    </operation>
-    <operation name="ModificarPeticion">
-      <soap:operation soapAction=""/>
-      <input>
-        <soap:body use="literal"/>
-      </input>
-      <output>
-        <soap:body use="literal"/>
-      </output>
-    </operation>
-    <operation name="ObtenerTipoPorId">
-      <soap:operation soapAction=""/>
-      <input>
-        <soap:body use="literal"/>
-      </input>
-      <output>
-        <soap:body use="literal"/>
-      </output>
-    </operation>
-    <operation name="ModificarTipo">
-      <soap:operation soapAction=""/>
-      <input>
-        <soap:body use="literal"/>
-      </input>
-      <output>
-        <soap:body use="literal"/>
-      </output>
-    </operation>
     <operation name="EliminarTipo">
-      <soap:operation soapAction=""/>
-      <input>
-        <soap:body use="literal"/>
-      </input>
-      <output>
-        <soap:body use="literal"/>
-      </output>
-    </operation>
-    <operation name="InsertarPeticion">
-      <soap:operation soapAction=""/>
-      <input>
-        <soap:body use="literal"/>
-      </input>
-      <output>
-        <soap:body use="literal"/>
-      </output>
-    </operation>
-    <operation name="ModificarCanal">
-      <soap:operation soapAction=""/>
-      <input>
-        <soap:body use="literal"/>
-      </input>
-      <output>
-        <soap:body use="literal"/>
-      </output>
-    </operation>
-    <operation name="InsertarCanal">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>
@@ -278,6 +229,24 @@
         <soap:body use="literal"/>
       </output>
     </operation>
+    <operation name="ModificarTipo">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="ModificarCanal">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
     <operation name="EliminarCanal">
       <soap:operation soapAction=""/>
       <input>
@@ -287,7 +256,133 @@
         <soap:body use="literal"/>
       </output>
     </operation>
+    <operation name="InsertarPeticion">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
     <operation name="EliminarPeticion">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="ObtenerTipoPorId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="InsertarCanal">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="ObtenerDepartamentoPorId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="ObtenerListaCompletaDepartamento">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="ObtenerListaCompletaTipo">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="EliminarDepartamento">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="ModificarDepartamento">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="ObtenerListaCompletaCanal">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="InsertarDepartamento">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="ObtenerCanalPorId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="ModificarPeticion">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="ObtenerListaCompletaPeticion">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="ObtenerPeticionPorId">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>
@@ -306,26 +401,36 @@
 <xs:schema version="1.0" targetNamespace="http://CapaServicio/" xmlns:tns="http://CapaServicio/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="EliminarCanal" type="tns:EliminarCanal"/>
   <xs:element name="EliminarCanalResponse" type="tns:EliminarCanalResponse"/>
+  <xs:element name="EliminarDepartamento" type="tns:EliminarDepartamento"/>
+  <xs:element name="EliminarDepartamentoResponse" type="tns:EliminarDepartamentoResponse"/>
   <xs:element name="EliminarPeticion" type="tns:EliminarPeticion"/>
   <xs:element name="EliminarPeticionResponse" type="tns:EliminarPeticionResponse"/>
   <xs:element name="EliminarTipo" type="tns:EliminarTipo"/>
   <xs:element name="EliminarTipoResponse" type="tns:EliminarTipoResponse"/>
   <xs:element name="InsertarCanal" type="tns:InsertarCanal"/>
   <xs:element name="InsertarCanalResponse" type="tns:InsertarCanalResponse"/>
+  <xs:element name="InsertarDepartamento" type="tns:InsertarDepartamento"/>
+  <xs:element name="InsertarDepartamentoResponse" type="tns:InsertarDepartamentoResponse"/>
   <xs:element name="InsertarPeticion" type="tns:InsertarPeticion"/>
   <xs:element name="InsertarPeticionResponse" type="tns:InsertarPeticionResponse"/>
   <xs:element name="InsertarTipo" type="tns:InsertarTipo"/>
   <xs:element name="InsertarTipoResponse" type="tns:InsertarTipoResponse"/>
   <xs:element name="ModificarCanal" type="tns:ModificarCanal"/>
   <xs:element name="ModificarCanalResponse" type="tns:ModificarCanalResponse"/>
+  <xs:element name="ModificarDepartamento" type="tns:ModificarDepartamento"/>
+  <xs:element name="ModificarDepartamentoResponse" type="tns:ModificarDepartamentoResponse"/>
   <xs:element name="ModificarPeticion" type="tns:ModificarPeticion"/>
   <xs:element name="ModificarPeticionResponse" type="tns:ModificarPeticionResponse"/>
   <xs:element name="ModificarTipo" type="tns:ModificarTipo"/>
   <xs:element name="ModificarTipoResponse" type="tns:ModificarTipoResponse"/>
   <xs:element name="ObtenerCanalPorId" type="tns:ObtenerCanalPorId"/>
   <xs:element name="ObtenerCanalPorIdResponse" type="tns:ObtenerCanalPorIdResponse"/>
+  <xs:element name="ObtenerDepartamentoPorId" type="tns:ObtenerDepartamentoPorId"/>
+  <xs:element name="ObtenerDepartamentoPorIdResponse" type="tns:ObtenerDepartamentoPorIdResponse"/>
   <xs:element name="ObtenerListaCompletaCanal" type="tns:ObtenerListaCompletaCanal"/>
   <xs:element name="ObtenerListaCompletaCanalResponse" type="tns:ObtenerListaCompletaCanalResponse"/>
+  <xs:element name="ObtenerListaCompletaDepartamento" type="tns:ObtenerListaCompletaDepartamento"/>
+  <xs:element name="ObtenerListaCompletaDepartamentoResponse" type="tns:ObtenerListaCompletaDepartamentoResponse"/>
   <xs:element name="ObtenerListaCompletaPeticion" type="tns:ObtenerListaCompletaPeticion"/>
   <xs:element name="ObtenerListaCompletaPeticionResponse" type="tns:ObtenerListaCompletaPeticionResponse"/>
   <xs:element name="ObtenerListaCompletaTipo" type="tns:ObtenerListaCompletaTipo"/>
@@ -334,23 +439,6 @@
   <xs:element name="ObtenerPeticionPorIdResponse" type="tns:ObtenerPeticionPorIdResponse"/>
   <xs:element name="ObtenerTipoPorId" type="tns:ObtenerTipoPorId"/>
   <xs:element name="ObtenerTipoPorIdResponse" type="tns:ObtenerTipoPorIdResponse"/>
-  <xs:complexType name="ObtenerListaCompletaTipo">
-    <xs:sequence/>
-  </xs:complexType>
-  <xs:complexType name="ObtenerListaCompletaTipoResponse">
-    <xs:sequence>
-      <xs:element name="return" type="tns:bTipo" minOccurs="0" maxOccurs="unbounded"/>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="bTipo">
-    <xs:sequence>
-      <xs:element name="fechaBitacora" type="xs:dateTime" minOccurs="0"/>
-      <xs:element name="idTipo" type="xs:long" minOccurs="0"/>
-      <xs:element name="nombreTipo" type="xs:string" minOccurs="0"/>
-      <xs:element name="registroBitacora" type="xs:string" minOccurs="0"/>
-      <xs:element name="usuarioBitacora" type="xs:string" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="EliminarTipo">
     <xs:sequence>
       <xs:element name="IdTipo" type="xs:long" minOccurs="0"/>
@@ -382,6 +470,33 @@
       <xs:element name="return" type="tns:resultado" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="ObtenerListaCompletaTipo">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="ObtenerListaCompletaTipoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:bTipo" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="bTipo">
+    <xs:sequence>
+      <xs:element name="fechaBitacora" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="idTipo" type="xs:long" minOccurs="0"/>
+      <xs:element name="nombreTipo" type="xs:string" minOccurs="0"/>
+      <xs:element name="registroBitacora" type="xs:string" minOccurs="0"/>
+      <xs:element name="usuarioBitacora" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EliminarDepartamento">
+    <xs:sequence>
+      <xs:element name="IdDepartamento" type="xs:long" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EliminarDepartamentoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:resultado" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="ObtenerTipoPorId">
     <xs:sequence>
       <xs:element name="IdTipo" type="xs:long"/>
@@ -402,13 +517,35 @@
   </xs:complexType>
   <xs:complexType name="bPeticion">
     <xs:sequence>
+      <xs:element name="accion" type="xs:string" minOccurs="0"/>
       <xs:element name="canal" type="xs:string" minOccurs="0"/>
+      <xs:element name="departamento" type="xs:string" minOccurs="0"/>
       <xs:element name="fechaBitacora" type="xs:dateTime" minOccurs="0"/>
       <xs:element name="idPeticion" type="xs:long" minOccurs="0"/>
       <xs:element name="nombre" type="xs:string" minOccurs="0"/>
+      <xs:element name="observaciones" type="xs:string" minOccurs="0"/>
       <xs:element name="registroBitacora" type="xs:string" minOccurs="0"/>
       <xs:element name="telefono1" type="xs:string" minOccurs="0"/>
       <xs:element name="tipo" type="xs:string" minOccurs="0"/>
+      <xs:element name="usuarioBitacora" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerDepartamentoPorId">
+    <xs:sequence>
+      <xs:element name="IdDepartamento" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerDepartamentoPorIdResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:bDepartamento" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="bDepartamento">
+    <xs:sequence>
+      <xs:element name="fechaBitacora" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="idDepartamento" type="xs:long" minOccurs="0"/>
+      <xs:element name="nombreDepartamento" type="xs:string" minOccurs="0"/>
+      <xs:element name="registroBitacora" type="xs:string" minOccurs="0"/>
       <xs:element name="usuarioBitacora" type="xs:string" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
@@ -418,6 +555,9 @@
       <xs:element name="Telefono1" type="xs:string" minOccurs="0"/>
       <xs:element name="Canal" type="xs:string" minOccurs="0"/>
       <xs:element name="Tipo" type="xs:string" minOccurs="0"/>
+      <xs:element name="Accion" type="xs:string" minOccurs="0"/>
+      <xs:element name="Departamento" type="xs:string" minOccurs="0"/>
+      <xs:element name="Observaciones" type="xs:string" minOccurs="0"/>
       <xs:element name="UsuarioBitacora" type="xs:string" minOccurs="0"/>
       <xs:element name="FechaBitacora" type="xs:dateTime" minOccurs="0"/>
       <xs:element name="RegistroBitacora" type="xs:string" minOccurs="0"/>
@@ -438,6 +578,16 @@
       <xs:element name="return" type="tns:bPeticion" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="EliminarPeticion">
+    <xs:sequence>
+      <xs:element name="IdPeticion" type="xs:long" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EliminarPeticionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:resultado" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="InsertarCanal">
     <xs:sequence>
       <xs:element name="NombreCanal" type="xs:string" minOccurs="0"/>
@@ -450,12 +600,24 @@
       <xs:element name="return" type="tns:resultado" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="EliminarPeticion">
+  <xs:complexType name="ObtenerListaCompletaDepartamento">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="ObtenerListaCompletaDepartamentoResponse">
     <xs:sequence>
-      <xs:element name="IdPeticion" type="xs:long" minOccurs="0"/>
+      <xs:element name="return" type="tns:bDepartamento" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="EliminarPeticionResponse">
+  <xs:complexType name="ModificarTipo">
+    <xs:sequence>
+      <xs:element name="IdTipo" type="xs:long" minOccurs="0"/>
+      <xs:element name="NombreTipo" type="xs:string" minOccurs="0"/>
+      <xs:element name="UsuarioBitacora" type="xs:string" minOccurs="0"/>
+      <xs:element name="FechaBitacora" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="RegistroBitacora" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModificarTipoResponse">
     <xs:sequence>
       <xs:element name="return" type="tns:resultado" minOccurs="0"/>
     </xs:sequence>
@@ -487,16 +649,14 @@
       <xs:element name="return" type="tns:bCanal" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="ModificarTipo">
+  <xs:complexType name="InsertarDepartamento">
     <xs:sequence>
-      <xs:element name="IdTipo" type="xs:long" minOccurs="0"/>
-      <xs:element name="NombreTipo" type="xs:string" minOccurs="0"/>
+      <xs:element name="NombreDepartamento" type="xs:string" minOccurs="0"/>
       <xs:element name="UsuarioBitacora" type="xs:string" minOccurs="0"/>
-      <xs:element name="FechaBitacora" type="xs:dateTime" minOccurs="0"/>
       <xs:element name="RegistroBitacora" type="xs:string" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="ModificarTipoResponse">
+  <xs:complexType name="InsertarDepartamentoResponse">
     <xs:sequence>
       <xs:element name="return" type="tns:resultado" minOccurs="0"/>
     </xs:sequence>
@@ -508,12 +668,29 @@
       <xs:element name="Telefono1" type="xs:string" minOccurs="0"/>
       <xs:element name="Canal" type="xs:string" minOccurs="0"/>
       <xs:element name="Tipo" type="xs:string" minOccurs="0"/>
+      <xs:element name="Accion" type="xs:string" minOccurs="0"/>
+      <xs:element name="Departamento" type="xs:string" minOccurs="0"/>
+      <xs:element name="Observaciones" type="xs:string" minOccurs="0"/>
       <xs:element name="UsuarioBitacora" type="xs:string" minOccurs="0"/>
       <xs:element name="FechaBitacora" type="xs:dateTime" minOccurs="0"/>
       <xs:element name="RegistroBitacora" type="xs:string" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="ModificarPeticionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:resultado" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModificarDepartamento">
+    <xs:sequence>
+      <xs:element name="IdDepartamento" type="xs:long" minOccurs="0"/>
+      <xs:element name="NombreDepartamento" type="xs:string" minOccurs="0"/>
+      <xs:element name="UsuarioBitacora" type="xs:string" minOccurs="0"/>
+      <xs:element name="FechaBitacora" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="RegistroBitacora" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModificarDepartamentoResponse">
     <xs:sequence>
       <xs:element name="return" type="tns:resultado" minOccurs="0"/>
     </xs:sequence>
@@ -533,6 +710,7 @@
       <xs:element name="IdCanal" type="xs:long" minOccurs="0"/>
       <xs:element name="NombreCanal" type="xs:string" minOccurs="0"/>
       <xs:element name="UsuarioBitacora" type="xs:string" minOccurs="0"/>
+      <xs:element name="FechaBitacora" type="xs:dateTime" minOccurs="0"/>
       <xs:element name="RegistroBitacora" type="xs:string" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
@@ -577,72 +755,87 @@
          <RegistroBitacora>?</RegistroBitacora>\r
       </cap:InsertarCanal>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://CapaServicio/RegistroWS/InsertarCanalRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="782bd98d-01f0-48f0-8a25-2c0d2c8974ff" isOneWay="false" action="" name="InsertarPeticion" bindingOperationName="InsertarPeticion" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="70ab0e6a-b905-4768-943b-0f3f9c6bff76" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.20.16.247:8080/Registro/RegistroWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cap="http://CapaServicio/">\r
-   <soapenv:Header/>\r
-   <soapenv:Body>\r
-      <cap:InsertarPeticion>\r
-         <!--Optional:-->\r
-         <Nombre>Ariel</Nombre>\r
-         <!--Optional:-->\r
-         <Telefono1>77420102</Telefono1>\r
-         <!--Optional:-->\r
-         <Canal>Facebook</Canal>\r
-         <!--Optional:-->\r
-         <Tipo>Consulta</Tipo>\r
-         <!--Optional:-->\r
-         <UsuarioBitacora>Sistema</UsuarioBitacora>\r
-         <!--Optional:-->\r
-         <RegistroBitacora>127.0.0.1</RegistroBitacora>\r
-      </cap:InsertarPeticion>\r
-   </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://CapaServicio/RegistroWS/InsertarPeticionRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="2563f794-7c30-4110-853f-653aa994841a" isOneWay="false" action="" name="InsertarTipo" bindingOperationName="InsertarTipo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="bd5a6ec6-8970-4ce3-9ce8-937d92fc78e8" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.20.16.247:8080/Registro/RegistroWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cap="http://CapaServicio/">\r
-   <soapenv:Header/>\r
-   <soapenv:Body>\r
-      <cap:InsertarTipo>\r
-         <!--Optional:-->\r
-         <NombreTipo>Reclamo</NombreTipo>\r
-         <!--Optional:-->\r
-         <UsuarioBitacora>Sistema</UsuarioBitacora>\r
-         <!--Optional:-->\r
-         <RegistroBitacora>127.0.0.1</RegistroBitacora>\r
-      </cap:InsertarTipo>\r
-   </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://CapaServicio/RegistroWS/InsertarTipoRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="f42ad3b2-284e-4c2e-ad00-c3df0c778470" isOneWay="false" action="" name="ModificarCanal" bindingOperationName="ModificarCanal" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7c6f03e4-aa9f-48bd-a58b-42d48fe29ceb" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.20.16.247:8080/Registro/RegistroWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cap="http://CapaServicio/">\r
-   <soapenv:Header/>\r
-   <soapenv:Body>\r
-      <cap:ModificarCanal>\r
-         <!--Optional:-->\r
-         <IdCanal>?</IdCanal>\r
-         <!--Optional:-->\r
-         <NombreCanal>?</NombreCanal>\r
-         <!--Optional:-->\r
-         <UsuarioBitacora>?</UsuarioBitacora>\r
-         <!--Optional:-->\r
-         <RegistroBitacora>?</RegistroBitacora>\r
-      </cap:ModificarCanal>\r
-   </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://CapaServicio/RegistroWS/ModificarCanalRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="3a70767b-1245-44f1-adb5-e6f4fc1da5a9" isOneWay="false" action="" name="ModificarPeticion" bindingOperationName="ModificarPeticion" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6aea751b-d80a-4e26-b647-d1f0a3bb43d5" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.20.16.247:8080/Registro/RegistroWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cap="http://CapaServicio/">\r
-   <soapenv:Header/>\r
-   <soapenv:Body>\r
-      <cap:ModificarPeticion>\r
-         <!--Optional:-->\r
-         <IdPeticion>?</IdPeticion>\r
-         <!--Optional:-->\r
-         <Nombre>?</Nombre>\r
-         <!--Optional:-->\r
-         <Telefono1>?</Telefono1>\r
-         <!--Optional:-->\r
-         <Canal>?</Canal>\r
-         <!--Optional:-->\r
-         <Tipo>?</Tipo>\r
-         <!--Optional:-->\r
-         <UsuarioBitacora>?</UsuarioBitacora>\r
-         <!--Optional:-->\r
-         <FechaBitacora>?</FechaBitacora>\r
-         <!--Optional:-->\r
-         <RegistroBitacora>?</RegistroBitacora>\r
-      </cap:ModificarPeticion>\r
-   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://CapaServicio/RegistroWS/InsertarCanalRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="782bd98d-01f0-48f0-8a25-2c0d2c8974ff" isOneWay="false" action="" name="InsertarPeticion" bindingOperationName="InsertarPeticion" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="70ab0e6a-b905-4768-943b-0f3f9c6bff76" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.20.16.247:8080/Registro/RegistroWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cap="http://CapaServicio/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cap:InsertarPeticion>
+         <!--Optional:-->
+         <Nombre>Max</Nombre>
+         <!--Optional:-->
+         <Telefono1>77766666</Telefono1>
+         <!--Optional:-->
+         <Canal>Facebook</Canal>
+         <!--Optional:-->
+         <Tipo>Consulta</Tipo>
+         <!--Optional:-->
+         <Accion>Derivado</Accion>
+         <!--Optional:-->
+         <Departamento>Cochabamba</Departamento>
+         <!--Optional:-->
+         <Observaciones>Ninguna</Observaciones>
+         <!--Optional:-->
+         <UsuarioBitacora>Sistema</UsuarioBitacora>
+         <!--Optional:-->
+         <FechaBitacora>?</FechaBitacora>
+         <!--Optional:-->
+         <RegistroBitacora>127.0.0.1</RegistroBitacora>
+      </cap:InsertarPeticion>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://CapaServicio/RegistroWS/InsertarPeticionRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="2563f794-7c30-4110-853f-653aa994841a" isOneWay="false" action="" name="InsertarTipo" bindingOperationName="InsertarTipo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="bd5a6ec6-8970-4ce3-9ce8-937d92fc78e8" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.20.16.247:8080/Registro/RegistroWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cap="http://CapaServicio/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cap:InsertarTipo>
+         <!--Optional:-->
+         <NombreTipo>Reclamo</NombreTipo>
+         <!--Optional:-->
+         <UsuarioBitacora>Sistema</UsuarioBitacora>
+         <!--Optional:-->
+         <FechaBitacora>?</FechaBitacora>
+         <!--Optional:-->
+         <RegistroBitacora>127.0.0.1</RegistroBitacora>
+      </cap:InsertarTipo>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://CapaServicio/RegistroWS/InsertarTipoRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="f42ad3b2-284e-4c2e-ad00-c3df0c778470" isOneWay="false" action="" name="ModificarCanal" bindingOperationName="ModificarCanal" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7c6f03e4-aa9f-48bd-a58b-42d48fe29ceb" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.20.16.247:8080/Registro/RegistroWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cap="http://CapaServicio/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cap:ModificarCanal>
+         <!--Optional:-->
+         <IdCanal>?</IdCanal>
+         <!--Optional:-->
+         <NombreCanal>?</NombreCanal>
+         <!--Optional:-->
+         <UsuarioBitacora>?</UsuarioBitacora>
+         <!--Optional:-->
+         <FechaBitacora>?</FechaBitacora>
+         <!--Optional:-->
+         <RegistroBitacora>?</RegistroBitacora>
+      </cap:ModificarCanal>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://CapaServicio/RegistroWS/ModificarCanalRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="3a70767b-1245-44f1-adb5-e6f4fc1da5a9" isOneWay="false" action="" name="ModificarPeticion" bindingOperationName="ModificarPeticion" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6aea751b-d80a-4e26-b647-d1f0a3bb43d5" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.20.16.247:8080/Registro/RegistroWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cap="http://CapaServicio/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cap:ModificarPeticion>
+         <!--Optional:-->
+         <IdPeticion>1</IdPeticion>
+         <!--Optional:-->
+         <Nombre>Juancito Juancito</Nombre>
+         <!--Optional:-->
+         <Telefono1>77758912</Telefono1>
+         <!--Optional:-->
+         <Canal>Facebook</Canal>
+         <!--Optional:-->
+         <Tipo>Consulta</Tipo>
+         <!--Optional:-->
+         <Accion>Derivado</Accion>
+         <!--Optional:-->
+         <Departamento>Chuquisaca</Departamento>
+         <!--Optional:-->
+         <Observaciones>Ninguna</Observaciones>
+         <!--Optional:-->
+         <UsuarioBitacora>Sistema</UsuarioBitacora>
+         <RegistroBitacora>127.0.0.1</RegistroBitacora>
+      </cap:ModificarPeticion>
+   </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://CapaServicio/RegistroWS/ModificarPeticionRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="a7beec18-5b95-4c5e-8a0a-141a9a58b39c" isOneWay="false" action="" name="ModificarTipo" bindingOperationName="ModificarTipo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="82acc157-8f16-4777-8e63-f763f93ceae9" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.20.16.247:8080/Registro/RegistroWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cap="http://CapaServicio/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
@@ -666,12 +859,12 @@
          <IdCanal>?</IdCanal>\r
       </cap:ObtenerCanalPorId>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://CapaServicio/RegistroWS/ObtenerCanalPorIdRequest"/></con:call></con:operation><con:operation id="26220b28-9ffc-485b-88fc-9d452de621c1" isOneWay="false" action="" name="ObtenerListaCompletaCanal" bindingOperationName="ObtenerListaCompletaCanal" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f40c8ad0-b17c-4c68-896d-7b573b560638" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.20.16.247:8080/Registro/RegistroWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cap="http://CapaServicio/">\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://CapaServicio/RegistroWS/ObtenerCanalPorIdRequest"/></con:call></con:operation><con:operation id="26220b28-9ffc-485b-88fc-9d452de621c1" isOneWay="false" action="" name="ObtenerListaCompletaCanal" bindingOperationName="ObtenerListaCompletaCanal" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f40c8ad0-b17c-4c68-896d-7b573b560638" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.20.16.247:8080/Registro/RegistroWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cap="http://CapaServicio/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <cap:ObtenerListaCompletaCanal/>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://CapaServicio/RegistroWS/ObtenerListaCompletaCanalRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="aa0092dd-b5d2-488b-bd16-6b9356b7a9b7" isOneWay="false" action="" name="ObtenerListaCompletaPeticion" bindingOperationName="ObtenerListaCompletaPeticion" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="79b6c3a1-2e97-4f01-87b6-f3ee257c9d30" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.20.16.247:8080/Registro/RegistroWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cap="http://CapaServicio/">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://CapaServicio/RegistroWS/ObtenerListaCompletaCanalRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="aa0092dd-b5d2-488b-bd16-6b9356b7a9b7" isOneWay="false" action="" name="ObtenerListaCompletaPeticion" bindingOperationName="ObtenerListaCompletaPeticion" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="79b6c3a1-2e97-4f01-87b6-f3ee257c9d30" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.20.16.247:8080/Registro/RegistroWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cap="http://CapaServicio/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <cap:ObtenerListaCompletaPeticion/>\r
@@ -681,18 +874,66 @@
    <soapenv:Body>\r
       <cap:ObtenerListaCompletaTipo/>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://CapaServicio/RegistroWS/ObtenerListaCompletaTipoRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="a98068f3-67c6-49c3-adf1-0edb37438aa7" isOneWay="false" action="" name="ObtenerPeticionPorId" bindingOperationName="ObtenerPeticionPorId" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="613948e9-e431-4e50-bee8-43e2aa371eae" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.20.16.247:8080/Registro/RegistroWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cap="http://CapaServicio/">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://CapaServicio/RegistroWS/ObtenerListaCompletaTipoRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="a98068f3-67c6-49c3-adf1-0edb37438aa7" isOneWay="false" action="" name="ObtenerPeticionPorId" bindingOperationName="ObtenerPeticionPorId" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="613948e9-e431-4e50-bee8-43e2aa371eae" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.20.16.247:8080/Registro/RegistroWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cap="http://CapaServicio/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <cap:ObtenerPeticionPorId>\r
-         <IdPeticion>?</IdPeticion>\r
+         <IdPeticion>1</IdPeticion>\r
       </cap:ObtenerPeticionPorId>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://CapaServicio/RegistroWS/ObtenerPeticionPorIdRequest"/></con:call></con:operation><con:operation id="8d3e9fb6-7d04-4956-aa8a-a42aa59047ff" isOneWay="false" action="" name="ObtenerTipoPorId" bindingOperationName="ObtenerTipoPorId" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d0296920-58ca-4a8f-9c3e-8a5c9196c0f9" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.20.16.247:8080/Registro/RegistroWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cap="http://CapaServicio/">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://CapaServicio/RegistroWS/ObtenerPeticionPorIdRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="8d3e9fb6-7d04-4956-aa8a-a42aa59047ff" isOneWay="false" action="" name="ObtenerTipoPorId" bindingOperationName="ObtenerTipoPorId" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d0296920-58ca-4a8f-9c3e-8a5c9196c0f9" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.20.16.247:8080/Registro/RegistroWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cap="http://CapaServicio/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <cap:ObtenerTipoPorId>\r
          <IdTipo>?</IdTipo>\r
       </cap:ObtenerTipoPorId>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://CapaServicio/RegistroWS/ObtenerTipoPorIdRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://CapaServicio/RegistroWS/ObtenerTipoPorIdRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="945560d2-cdff-4a03-b118-50011abc034a" isOneWay="false" action="" name="InsertarDepartamento" bindingOperationName="InsertarDepartamento" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c83cfc6b-e137-471e-9be9-54a6d3e8c46b" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.20.16.247:8080/Registro/RegistroWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cap="http://CapaServicio/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <cap:InsertarDepartamento>\r
+         <!--Optional:-->\r
+         <NombreDepartamento>Acre</NombreDepartamento>\r
+         <!--Optional:-->\r
+         <UsuarioBitacora>Sistema</UsuarioBitacora>\r
+         <!--Optional:-->\r
+         <RegistroBitacora>127.0.0.1</RegistroBitacora>\r
+      </cap:InsertarDepartamento>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://CapaServicio/RegistroWS/InsertarDepartamentoRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="79e2631a-96d1-4a1b-89d7-4bd8025352f0" isOneWay="false" action="" name="ObtenerListaCompletaDepartamento" bindingOperationName="ObtenerListaCompletaDepartamento" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="26c32525-54d3-4c61-8140-f0abee1eabdd" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.20.16.247:8080/Registro/RegistroWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cap="http://CapaServicio/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <cap:ObtenerListaCompletaDepartamento/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://CapaServicio/RegistroWS/ObtenerListaCompletaDepartamentoRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="490589ba-d5c0-4b97-aaba-9cfae40d0e84" isOneWay="false" action="" name="ModificarDepartamento" bindingOperationName="ModificarDepartamento" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="40ceea45-e710-46b4-83ba-ec2c145c43a3" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.20.16.247:8080/Registro/RegistroWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cap="http://CapaServicio/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cap:ModificarDepartamento>
+         <!--Optional:-->
+         <IdDepartamento>10</IdDepartamento>
+         <!--Optional:-->
+         <NombreDepartamento>Pantanal</NombreDepartamento>
+         <!--Optional:-->
+         <UsuarioBitacora>Sistema</UsuarioBitacora>
+         <!--Optional:-->
+         <FechaBitacora>?</FechaBitacora>
+         <!--Optional:-->
+         <RegistroBitacora>127.0.0.1</RegistroBitacora>
+      </cap:ModificarDepartamento>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://CapaServicio/RegistroWS/ModificarDepartamentoRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="43f4416a-ba21-4017-ba9f-b5b1c4e5abab" isOneWay="false" action="" name="EliminarDepartamento" bindingOperationName="EliminarDepartamento" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4601d1c2-18a6-4ef0-a649-ebacbfd33745" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.20.16.247:8080/Registro/RegistroWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cap="http://CapaServicio/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <cap:EliminarDepartamento>\r
+         <!--Optional:-->\r
+         <IdDepartamento>11</IdDepartamento>\r
+      </cap:EliminarDepartamento>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://CapaServicio/RegistroWS/EliminarDepartamentoRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="405e7004-fe7f-4595-8a7e-7f43318a3db1" isOneWay="false" action="" name="ObtenerDepartamentoPorId" bindingOperationName="ObtenerDepartamentoPorId" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1a841b32-0f39-4725-a365-3cededbfa1fd" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.20.16.247:8080/Registro/RegistroWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cap="http://CapaServicio/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <cap:ObtenerDepartamentoPorId>\r
+         <IdDepartamento>5</IdDepartamento>\r
+      </cap:ObtenerDepartamentoPorId>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://CapaServicio/RegistroWS/ObtenerDepartamentoPorIdRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

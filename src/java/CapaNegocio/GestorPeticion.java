@@ -42,9 +42,9 @@ public class GestorPeticion {
                 e.setTelefono1(registro.getString("telefono1"));                
                 e.setCanal(registro.getString("canal"));
                 e.setTipo(registro.getString("tipo"));
-                e.setCanal(registro.getString("accion"));
-                e.setCanal(registro.getString("departamento"));
-                e.setCanal(registro.getString("observaciones"));
+                e.setAccion(registro.getString("accion"));
+                e.setDepartamento(registro.getString("departamento"));
+                e.setObservaciones(registro.getString("observaciones"));
                 e.setUsuarioBitacora(registro.getString("usuario_bitacora"));
                 e.setFechaBitacora(registro.getDate("fecha_bitacora"));
                 e.setRegistroBitacora(registro.getString("registro_bitacora"));                
@@ -86,9 +86,9 @@ public class GestorPeticion {
                 e.setTelefono1(registro.getString("telefono1"));                
                 e.setCanal(registro.getString("canal"));
                 e.setTipo(registro.getString("tipo"));
-                e.setCanal(registro.getString("accion"));
-                e.setCanal(registro.getString("departamento"));
-                e.setCanal(registro.getString("observaciones"));
+                e.setAccion(registro.getString("accion"));
+                e.setDepartamento(registro.getString("departamento"));
+                e.setObservaciones(registro.getString("observaciones"));
                 e.setUsuarioBitacora(registro.getString("usuario_bitacora"));
                 e.setFechaBitacora(registro.getDate("fecha_bitacora"));
                 e.setRegistroBitacora(registro.getString("registro_bitacora"));
