@@ -31,6 +31,21 @@ create table Departamento(
   primary key (IdCiudad)
 );
 
+C:\Program Files\PostgreSQL\9.2\data
+COPY funcionario (nombrefuncionario, unidad, cargo, interno) From 'internostxt.txt' USING DELIMITERS ';';
+
+create table Funcionario(
+  IdFuncionario serial,
+  NombreFuncionario varchar(250) null,  
+  Unidad varchar(250) null,
+  Cargo varchar(250) null,
+  Interno varchar(250) null,
+  usuario_bitacora varchar(250) null,
+  fecha_bitacora timestamp(0) null,
+  registro_bitacora varchar(50) null,
+  primary key (IdFuncionario)
+);
+
 create table Peticion(
   IdPeticion serial,  
   Nombre varchar(50) null,
